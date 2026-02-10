@@ -38,6 +38,7 @@ header {
     top: 0;
     z-index: 1000;
     background-color: #faf8f5;
+    transition: padding 0.25s ease, background-color 0.25s ease;
 }
 
 .header-container {

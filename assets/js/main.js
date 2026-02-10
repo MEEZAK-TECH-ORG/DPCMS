@@ -45,20 +45,44 @@ document.addEventListener('DOMContentLoaded', function() {
     // Laptop view (all pages): header sticks to top when scrolled, transparent bg; at top returns to original
     var header = document.querySelector('header');
     if (header) {
-        var scrollThreshold = 80;
+        var thresholdDown = 120;  // add scrolled state only after scrolling past this
+        var thresholdUp = 15;     // remove scrolled state only when back above this (wide dead zone)
+        var removeDelay = 120;    // ms to wait before removing (avoids shake from small bounces)
         var lastWidth = window.innerWidth;
         var desktopMinWidth = 1025;
+        var removeTimeout = null;
 
         function updateHeaderScrolled() {
             var isDesktop = window.innerWidth >= desktopMinWidth;
             if (!isDesktop) {
+                if (removeTimeout) clearTimeout(removeTimeout);
+                removeTimeout = null;
                 header.classList.remove('header-scrolled');
                 return;
             }
-            if (window.scrollY > scrollThreshold) {
+            var y = window.scrollY;
+            if (y > thresholdDown) {
+                if (removeTimeout) {
+                    clearTimeout(removeTimeout);
+                    removeTimeout = null;
+                }
                 header.classList.add('header-scrolled');
+            } else if (y < thresholdUp) {
+                if (header.classList.contains('header-scrolled')) {
+                    if (!removeTimeout) {
+                        removeTimeout = setTimeout(function() {
+                            removeTimeout = null;
+                            if (window.scrollY < thresholdUp) {
+                                header.classList.remove('header-scrolled');
+                            }
+                        }, removeDelay);
+                    }
+                }
             } else {
-                header.classList.remove('header-scrolled');
+                if (removeTimeout) {
+                    clearTimeout(removeTimeout);
+                    removeTimeout = null;
+                }
             }
         }
 
