@@ -432,3 +432,121 @@ footer p {
         font-size: 1.25rem;
     }
 }
+
+/* Management Team section – full width, responsive */
+.management-team {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 3rem 1.5rem 4rem;
+    background-color: #fff;
+}
+
+.management-team-content {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    padding-left: 1.5rem;
+
+}
+
+.management-team-heading {
+    font-size: 32px;
+    font-weight: 700;
+    font-style: bold;
+    color: #51250E;
+    margin-bottom: 1rem;
+}
+
+.management-team-intro {
+    max-width: 889px;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+    font-style: regular;
+    color: #697586;
+    margin-bottom: 2rem;
+}
+
+.management-team-image-wrap {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.management-team-image {
+    max-width: 1160px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    vertical-align: top;
+}
+
+.management-team-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+    margin: 0;
+}
+
+.management-team-list li {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: regular;
+    line-height: 1.7;
+    color: #697586;
+    margin-bottom: 0.75rem;
+}
+
+.management-team-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Tablet: image a bit wider than small screens */
+@media (max-width: 1024px) {
+    .management-team-image {
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 768px) {
+    .management-team {
+        padding: 2rem 1rem 3rem;
+    }
+
+    .management-team-heading {
+        font-size: 1.5rem;
+    }
+
+    .management-team-intro,
+    .management-team-list li {
+        font-size: 0.9375rem;
+    }
+
+    .management-team-intro {
+        max-width: 100%;
+    }
+
+    .management-team-content {
+        margin-bottom: 1.5rem;
+        padding-left: 1rem;
+    }
+
+    .management-team-list {
+        padding-left: 1.25rem;
+    }
+
+    /* Tablet: image a little wider */
+    .management-team-image {
+        max-width: 520px;
+    }
+}
+
+/* Small screens (phones): image 388px max, scales down on very narrow viewports */
+@media (max-width: 480px) {
+    .management-team-image {
+        max-width: 388px;
+        width: 100%;
+    }
+}
