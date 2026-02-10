@@ -17,7 +17,7 @@
                     <p class="tagline">Destiny Promoters Cooperative</p>
                 </div>
             </div>
-            <nav>
+            <nav class="header-nav">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/pages/about/">About Us</a></li>
@@ -30,8 +30,39 @@
                 <a href="/pages/login/" class="btn btn-login">Login</a>
                 <a href="/pages/register/" class="btn btn-register">Register</a>
             </div>
+            <button type="button" class="header-menu-toggle" aria-label="Open menu">
+                <img src="/assets/icons/hamburger.svg" alt="" class="hamburger-icon">
+            </button>
         </div>
     </header>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true">
+        <div class="sidebar-panel">
+            <div class="sidebar-header">
+                <div class="sidebar-logo-section">
+                    <img src="/assets/images/dpcms-logo.svg" alt="DPCMS" class="sidebar-logo">
+                    <div class="sidebar-brand-info">
+                        <span class="sidebar-brand-name">DPCMS</span>
+                        <span class="sidebar-tagline">Destiny Promoters Cooperative</span>
+                    </div>
+                </div>
+                <button type="button" class="sidebar-close" aria-label="Close menu">
+                    <img src="/assets/icons/cancel.svg" alt="" class="cancel-icon">
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="/">Home</a>
+                <a href="/pages/about/">About us</a>
+                <a href="/pages/team/">Our Team</a>
+                <a href="/pages/ministry/" class="active">Our Ministry</a>
+                <a href="/pages/contact/">Contact us</a>
+            </nav>
+            <div class="sidebar-actions">
+                <a href="/pages/register/" class="btn btn-register sidebar-btn-register">Register</a>
+                <a href="/pages/login/" class="btn btn-login sidebar-btn-login">Login</a>
+            </div>
+        </div>
+    </div>
 
     <main>
         <h1>Our Ministry</h1>
@@ -39,7 +70,99 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 DPCMS. All rights reserved.</p>
+        <div class="footer-top">
+            <div class="footer-top-inner">
+                <div class="footer-brand">
+                    <div class="footer-logo-section">
+                        <img src="/assets/images/dpcms-logo.svg" alt="DPCMS" class="footer-logo">
+                        <div class="footer-brand-info">
+                            <span class="footer-brand-name">DPCMS</span>
+                            <span class="footer-tagline">Destiny Promoters Cooperative</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">Creating a better future to grow in Christ and to bless and to preach the coming of Jesus across nations.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook"><img src="/assets/icons/facebook.svg" alt=""></a>
+                        <a href="#" class="social-icon" aria-label="WhatsApp"><img src="/assets/icons/whatsapp.svg" alt=""></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><img src="/assets/icons/youtube.svg" alt=""></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><img src="/assets/icons/instagram.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h3 class="newsletter-heading">Subscribe To Our Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter email address" class="newsletter-input">
+                        <button type="submit" class="newsletter-btn">Subscribe now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-wave">
+            <svg
+            viewBox="0 0 1440 220"
+            preserveAspectRatio="none"
+            width="100%"
+            height="220"
+          >
+            <path
+              d="
+                M 0,20
+                C 180,180 360,180 540,140
+                C 720,100 900,60 1080,90
+                C 1260,120 1380,160 1440,220
+                L 1440,220
+                L 0,220
+                Z
+              "
+              fill="#F3702B"
+            />
+          </svg>
+        </div>
+        <div class="footer-main">
+            <div class="footer-main-inner">
+                <div class="footer-col footer-contacts">
+                    <h4 class="footer-col-title">Contacts</h4>
+                    <ul class="footer-list">
+                        <li><span class="footer-icon-circle"><svg class="footer-icon" viewBox="0 0 24 24" fill="#F3702B" stroke="#F3702B" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><a href="tel:+23408184212487">+234 08184212487</a></li>
+                        <li><span class="footer-icon-circle"><svg class="footer-icon" viewBox="0 0 24 24" fill="#F3702B" stroke="#F3702B" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><a href="tel:+23409031504010">+234 09031504010</a></li>
+                        <li><span class="footer-icon-circle"><svg class="footer-icon" viewBox="0 0 24 24" fill="#F3702B" stroke="#F3702B" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><a href="tel:+23408090740446">+234 08090740446</a></li>
+                        <li><span class="footer-icon-circle"><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="#F3702B" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><a href="mailto:support@destinypromoterscooperative.com">support@destinypromoterscooperative.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-pages">
+                    <h4 class="footer-col-title">Pages</h4>
+                    <ul class="footer-list">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pages/about/">About Us</a></li>
+                        <li><a href="/pages/team/">Our Team</a></li>
+                        <li><a href="/pages/ministry/">Our Ministry</a></li>
+                        <li><a href="/pages/contact/">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-links">
+                    <h4 class="footer-col-title">Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="#">Terms and conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookies Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-address">
+                    <h4 class="footer-col-title">Address</h4>
+                    <ul class="footer-list">
+                        <li><span class="footer-icon-circle"><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="#F3702B" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="footer-address-text">Office 55 Demurin Road, Opposite Elebiju Bustop, Ketu Lagos</span></li>
+                        <li><span class="footer-icon-circle"><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="#F3702B" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="footer-address-text">20 Demurin Road, Mascara Bus-stop,<br>Ketu Lagos (New office)</span></li>
+                        <li><span class="footer-icon-circle"><svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="#F3702B" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><span class="footer-address-text">Mon-Fri: 9:00am-05:00pm, Saturday: 09:00am-3:00pm</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="footer-copyright-inner">
+                <p class="copyright-line"><span class="copyright-symbol">©</span> 2025. All Rights Reserved.</p>
+                <p class="copyright-line">Developed by <a href="https://meezaktechnologies.com" target="_blank" rel="noopener noreferrer">Meezak Technologies</a></p>
+            </div>
+        </div>
     </footer>
 
     <script src="/assets/js/main.js"></script>
