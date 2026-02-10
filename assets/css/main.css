@@ -656,7 +656,11 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* padding-right: 10px; */
     /* border: 2px solid blue; */
+}
+.copyright-link {
+   margin-left: 5px;
 }
 
 .footer-copyright a {
