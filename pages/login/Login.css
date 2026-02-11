@@ -5,7 +5,7 @@
 
 /* Reset */
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%}
+html,body{min-height:100%}
 body{
   font-family:'Inter',sans-serif;
   background:#fff;
@@ -17,10 +17,10 @@ body{
 /* -------- Variables -------- */
 :root{
   /* Desktop svg width */
-  --svg-width: clamp(220px, 35vw, 606.5px);
+  --svg-width: clamp(180px, 25vw, 450px);
 
   /* Mobile fixed svg size - smaller, controlled size */
-  --mobile-svg-size: max(350px, 55vw);
+  --mobile-svg-size: max(280px, 45vw);
 
   /* How much of the svg is reserved as top spacing for the form.
      Smaller = form starts higher (MORE overlap/piercing). */
@@ -45,13 +45,13 @@ body{
 }
 
 /* -------- Layout -------- */
-.container{display:flex;min-height:100vh;align-items:stretch;position:relative}
+.container{display:flex;min-height:100vh;align-items:flex-start;position:relative}
 
 /* LEFT (desktop decoration) */
 .left-section{
   flex:1;
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:center;
   padding:var(--section-padding);
   position:relative;
@@ -64,7 +64,7 @@ body{
 .svg-decoration svg{width:100%;height:auto;display:block}
 
 /* Welcome content (desktop) */
-.welcome-content{max-width:520px;width:100%;margin-top:clamp(60px,8vw,160px);z-index:2;text-align:center}
+.welcome-content{max-width:520px;width:100%;margin-top:clamp(60px,8vw,160px);z-index:2;text-align:center;flex-shrink:0}
 .welcome-title{font-size:var(--title-size);font-weight:700;color:#191A15;margin-bottom:calc(var(--form-gap)*0.6)}
 .welcome-subtitle{font-size:var(--subtitle-size);color:#3D3D3D;line-height:1.5;max-width:420px;margin:0 auto calc(var(--form-gap)*1.6)}
 
@@ -88,6 +88,7 @@ body{
   position:relative;
   background:#fff;
   z-index:2;
+  min-height:auto;
 }
 
 /* Form container */
@@ -169,9 +170,20 @@ body{
 
 /* Desktop region (>=1000px): show left + right */
 @media (min-width:1000px){
-  .left-section{display:flex}
+  .left-section{
+    display:flex;
+    min-height:100vh;
+  }
+  .left-section .welcome-content{
+    margin-right:clamp(20px,5vw,80px);
+    padding-bottom:var(--section-padding);
+  }
   .svg-fixed{display:none}
-  .right-section{align-items:center} /* center form vertically on desktop */
+  .right-section{
+    align-items:flex-start; /* Changed from center to prevent compression */
+    padding-top:var(--section-padding);
+    padding-bottom:var(--section-padding);
+  }
 }
 
 /* Mobile region (<1000px): remove left, show svg that scrolls,
@@ -180,15 +192,18 @@ body{
   .left-section{display:none !important}
   .svg-fixed{display:block} /* SHOW THE SVG as a block element that scrolls */
   
-  .container{flex-direction:column}
+  .container{
+    flex-direction:column;
+    align-items:stretch;
+  }
   /* top align so form sits under svg visually */
-  .right-section{padding:12px 12px 24px 12px;align-items:flex-start;box-sizing:border-box}
+  .right-section{padding:12px 12px 24px 12px;align-items:flex-start;box-sizing:border-box;padding-top:0}
 
   /* form container on mobile */
   .form-container{
     max-width:100%;
     padding:0 12px;
-    margin-top: 20px; /* Small gap after SVG */
+    margin-top: -50px; /* Small gap from SVG */
   }
 
   .form-group input[type="tel"],.form-group input[type="password"]{height:48px;padding:10px 12px}
@@ -198,7 +213,7 @@ body{
 /* extra tweak for narrower desktops to converge profile images */
 @media (max-width:1400px) and (min-width:1000px){
   :root{
-    --svg-width: clamp(180px, 28vw, 520px);
+    --svg-width: clamp(150px, 22vw, 380px);
     --p3-left: clamp(140px, 30vw, 330px);
     --p1-left: clamp(80px, 14vw, 150px);
     --p4-left: clamp(120px, 28vw, 180px);
@@ -210,10 +225,10 @@ body{
 /* Very small phones */
 @media (max-width:420px){
   :root{
-    --mobile-svg-size: max(280px, 55vw);
-    --mobile-overlap-factor: 0.42;
+    --mobile-svg-size: max(240px, 45vw);
+    --mobile-overlap-factor: 0.35;
   }
-  .form-container{margin-top: calc(var(--mobile-svg-size) * var(--mobile-overlap-factor))}
+  .form-container{margin-top: -40px}
   .form-title{font-size:22px}
   .form-subtitle{font-size:13px}
 }
