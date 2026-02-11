@@ -138,6 +138,26 @@ body{
 .register-link a:visited{color:#F5884E}
 .register-link a:hover{text-decoration:underline;color:#E67636}
 
+/* Back to Home link */
+.back-to-home{
+  display:block;
+  font-family:'Geist',sans-serif;
+  font-weight:700;
+  font-size:20px;
+  line-height:25px;
+  letter-spacing:0px;
+  text-align:center;
+  color:#311609;
+  text-decoration:none;
+  margin-top:32px;
+  background:none;
+  transition:none;
+  animation-duration:0ms;
+}
+.back-to-home:hover{
+  text-decoration:underline;
+}
+
 /* -------- Mobile svg that scrolls with page --------
    This svg will be displayed at top of container on mobile.
    Important: pointer-events:none so inputs below are still interactive.
