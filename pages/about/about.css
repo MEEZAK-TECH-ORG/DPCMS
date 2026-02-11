@@ -1,0 +1,776 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    /* max-width: 800px; */
+    margin: 0 auto;
+    /* margin-bottom: 60px; */
+    background-color: #fafafa;
+}
+
+.about-badge {
+    height: 45px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 1px solid #F7A072;
+    background: #FFFAED;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: #CA5D24;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: fit-content;
+}
+
+.about-heading {
+    margin-top: 40px;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: #51250E;
+    text-align: center;
+}
+
+.about-description {
+    margin-top: 24px;
+    max-width: 600px;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #697586;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-heading { 
+        font-size: 40px; 
+    }
+    .about-description { 
+        font-size: 15px; 
+        line-height: 23px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .about-heading { 
+        font-size: 36px; 
+    }
+    .about-description { 
+        font-size: 14px; 
+        line-height: 22px; 
+    }
+
+    .about-container { 
+        padding: 40px 15px; 
+        margin-bottom: 40px; 
+    }
+}
+
+/* About Content Section */
+.about-content-section {
+    background-color: #EEF2F6;
+    padding: 80px 50px;
+}
+
+.about-content-inner {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: start;
+}
+
+/* Left: Image Container */
+.about-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #CFE0F3;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 681px;
+    min-height: 584px;
+}
+
+.about-image-content {
+    width: 100%;
+   
+}
+
+.about-tag {
+    background-color: #FDE2D5;
+    border: 1px solid #F3702B;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #0C3A30;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-image-heading {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #131313;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.2;
+}
+
+.about-image-wrapper {
+    width: 100%;
+    max-width: 604px;
+    border-radius: 12px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.about-hero-image {
+    width: 100%;
+    height: 342px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    max-width: 100%;
+}
+
+/* Arrow Container - standalone in the middle */
+.about-arrow-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1.2rem 1.1rem;
+}
+
+.about-arrow {
+    flex-shrink: 0;
+    pointer-events: none;
+}
+
+.about-arrow-desktop {
+    width: 132px;
+    height: 407px;
+    display: block;
+}
+
+.about-arrow-mobile {
+    width: 206px;
+    height: 128px;
+    display: none;
+}
+
+.about-arrow svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Right: Points Container */
+.about-points-container {
+    position: relative;
+}
+
+.about-points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.about-point {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.about-point-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #86B2E1;
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.about-point-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #F3702B;
+    background-color: transparent;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    z-index: 2;
+}
+
+.about-point-text {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #697586;
+    margin: 0;
+    /* flex: 1; */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-content-section {
+        padding: 60px 30px;
+    }
+
+    .about-content-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image-container {
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+    }
+
+    .about-image-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-hero-image {
+        width: 100%;
+        height: auto;
+        max-height: 342px;
+    }
+
+    .about-arrow-container {
+        display: flex;
+        padding: 1rem 0;
+        justify-content: center;
+    }
+
+    .about-arrow-desktop {
+        display: none;
+    }
+
+    .about-arrow-mobile {
+        display: block;
+    }
+}
+
+@media (max-width: 834px) {
+    .about-content-section {
+        padding: 50px 25px;
+    }
+
+    .about-content-inner {
+        gap: 2rem;
+    }
+
+    .about-image-container {
+        padding: 1.75rem;
+    }
+
+    .about-arrow-container {
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content-section {
+        padding: 50px 20px;
+    }
+
+    .about-content-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image-container {
+        padding: 1.5rem;
+    }
+
+    .about-image-heading {
+        font-size: 1.75rem;
+    }
+
+    .about-image-container {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .about-image-wrapper {
+        width: 100%;
+    }
+
+    .about-hero-image {
+        width: 100%;
+        height: 194px;
+        object-fit: cover;
+    }
+
+    .about-points-container {
+        padding-left: 0;
+    }
+
+    .about-arrow-container {
+        display: flex;
+        padding: 1rem 0;
+        justify-content: center;
+    }
+
+    .about-arrow-desktop {
+        display: none;
+    }
+
+    .about-arrow-mobile {
+        display: block;
+    }
+
+    .about-points-list {
+        gap: 2rem;
+    }
+
+    .about-point-text {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-content-section {
+        padding: 40px 15px;
+    }
+
+    .about-content-inner {
+        gap: 1.5rem;
+    }
+
+    .about-image-container {
+        padding: 1.25rem;
+    }
+
+    .about-image-heading {
+        font-size: 1.5rem;
+    }
+
+    .about-image-container {
+        width: 100%;
+        padding: 1.25rem;
+    }
+
+    .about-image-wrapper {
+        width: 100%;
+    }
+
+    .about-hero-image {
+        width: 100%;
+        height: 194px;
+        object-fit: cover;
+    }
+
+    .about-arrow-container {
+        padding: 0.75rem 0;
+    }
+
+    .about-arrow-mobile {
+        width: 180px;
+        height: 112px;
+    }
+
+    .about-arrow-container {
+        padding: 0.75rem 0;
+    }
+
+    .about-arrow-mobile {
+        width: 180px;
+        height: 112px;
+    }
+
+    .about-points-list {
+        gap: 1.5rem;
+    }
+
+    .about-point-text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* Vision & Mission Section */
+.about-vision-mission-section {
+    background-color: #FFFAED;
+    padding: 80px 50px;
+    height: 680px;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vision-mission-inner {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+    /* border: 1px solid red; */
+    padding-top: 80px;
+}
+
+.vision-mission-container {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    border: 1px solid #CDD5DF;
+    height: 434px;
+    /* flex: 1; */
+    /* max-width: calc(100% - 400px); */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.vision-mission-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.vision-mission-item {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    padding-right: 9.5rem;
+    padding-left: 4.5rem;
+    justify-content: center;
+    /* border: 1px solid red; */
+    /* width: 200px; */
+}
+
+.vision-mission-divider {
+    width: 1px;
+    background-color: #E5E7EB;
+    margin: 2rem 0;
+    align-self: stretch;
+}
+
+.vision-mission-icon {
+    width: 57px;
+    height: 57px;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+}
+
+.vision-mission-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.vision-mission-heading {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #131313;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.vision-mission-text {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #697586;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.vision-mission-image-container {
+    position: relative;
+    width: 416px;
+    height: 466px;
+    flex-shrink: 0;
+    margin-left: -150px;
+    margin-top: -10px;
+    z-index: 2;
+  
+    
+}
+
+.vision-mission-image-bg {
+    position: absolute;
+    width: 271px;
+    height: 196px;
+    border-radius: 20px;
+    background-color: rgba(243, 112, 43, 0.44);
+    top: -50px;
+    left: 140px;
+    z-index: 1;
+}
+
+.vision-mission-image {
+    width: 354px;
+    height: 419px;
+    object-fit: cover;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive for Vision & Mission Section */
+@media (max-width: 1024px) {
+    .about-vision-mission-section {
+        padding: 60px 30px;
+        height: auto;
+        min-height: auto;
+    }
+
+    .vision-mission-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        padding-top: 0;
+    }
+
+    .vision-mission-container {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: auto;
+    }
+
+    .vision-mission-content {
+        flex-direction: row;
+    }
+
+    .vision-mission-item {
+        padding-right: 2rem;
+        padding-left: 2rem;
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .vision-mission-image-container {
+        margin-left: 0;
+        margin-top: 0;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 416 / 466;
+        padding-top: 10%;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 6%;
+        box-sizing: border-box;
+    }
+
+    .vision-mission-image {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 354 / 419;
+        margin-left: 0;
+    }
+
+    .vision-mission-image-bg {
+        width: 60%;
+        height: 35%;
+        top: 0;
+        right: 0;
+        left: auto;
+        transform: none;
+    }
+}
+
+@media (max-width: 834px) {
+    .about-vision-mission-section {
+        padding: 50px 0;
+    }
+
+    .vision-mission-inner {
+        gap: 2.5rem;
+        width: 100%;
+    }
+
+    .vision-mission-container {
+        padding-left: 25px;
+        padding-right: 25px;
+        box-sizing: border-box;
+    }
+
+    .vision-mission-content {
+        flex-direction: column;
+    }
+
+    .vision-mission-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0;
+    }
+
+    .vision-mission-item {
+        padding: 2rem 1.75rem;
+    }
+
+    .vision-mission-heading {
+        font-size: 26px;
+    }
+
+    .vision-mission-text {
+        font-size: 16px;
+    }
+
+    .vision-mission-image-container {
+        width: 100%;
+        max-width: 100%;
+        padding-top: 10%;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 6%;
+        box-sizing: border-box;
+    }
+
+    .vision-mission-image {
+        width: 92%;
+    }
+
+    .vision-mission-image-bg {
+        width: calc(60% + 20px);
+        height: 35%;
+        top: 0;
+        right: 0;
+        left: auto;
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-vision-mission-section {
+        padding: 50px 20px;
+    }
+
+    .vision-mission-inner {
+        gap: 2rem;
+    }
+
+    .vision-mission-item {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .vision-mission-heading {
+        font-size: 24px;
+    }
+
+    .vision-mission-text {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .vision-mission-icon {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 1.25rem;
+    }
+
+    .vision-mission-image-container {
+        width: 100%;
+        max-width: 100%;
+        padding-top: 9%;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 6%;
+        box-sizing: border-box;
+    }
+
+    .vision-mission-image {
+        width: 92%;
+    }
+
+    .vision-mission-image-bg {
+        width: calc(58% + 20px);
+        height: 35%;
+        top: 0;
+        right: 0;
+        left: auto;
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-vision-mission-section {
+        padding: 40px 15px;
+    }
+
+    .vision-mission-inner {
+        gap: 1.5rem;
+    }
+
+    .vision-mission-item {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .vision-mission-heading {
+        font-size: 22px;
+        margin-bottom: 0.75rem;
+    }
+
+    .vision-mission-text {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .vision-mission-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1rem;
+    }
+
+    .vision-mission-image-container {
+        width: 100%;
+        max-width: 100%;
+        padding-top: 10%;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 6%;
+        box-sizing: border-box;
+    }
+
+    .vision-mission-image {
+        width: 92%;
+    }
+
+    .vision-mission-image-bg {
+        width: calc(55% + 20px);
+        height: 34%;
+        top: 0;
+        right: 0;
+        left: auto;
+        transform: none;
+    }
+}
