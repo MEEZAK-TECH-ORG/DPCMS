@@ -1,0 +1,583 @@
+/* =========================
+   Contact.css (page-specific)
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #FFFFFF;
+}
+
+/* Override main constraint for contact page */
+main {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.contact-badge {
+    height: 45px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 1px solid #F7A072;
+    background: #FFFAED;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: #CA5D24;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: fit-content;
+}
+
+.contact-heading {
+    margin-top: 40px;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: #51250E;
+    text-align: center;
+}
+
+.contact-description {
+    margin-top: 24px;
+    max-width: 600px;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #697586;
+}
+
+/* Contact Section - Full width background */
+.contact-section {
+    background: #EAF5FC;
+    padding: 80px 20px;
+    width: 100%;
+}
+
+/* SECTION LAYOUT: flex row on desktop, column at <=780px */
+/* Important: align-items: stretch makes both columns equal height */
+.section-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 48px;
+    padding: 0 20px;
+    align-items: stretch; /* <-- stretch children to equal height on desktop */
+}
+
+/* Shared Container Styles */
+.form-container,
+.info-card {
+    background: #FEFEFE;
+    padding: 32px 24px;
+    border-radius: 24px;
+    border: 1px solid #FDE2D5;
+    opacity: 1;
+}
+
+/* FORM-CONTAINER: make it a column flex so we can have a scrollable body and persistent actions */
+.form-container {
+    flex: 0 0 60%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+/* Sidebar container also stretches */
+.info-sidebar {
+    flex: 0 0 calc(40% - 48px);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+    align-self: stretch;
+}
+
+/* Right sidebar - optimized spacing */
+.info-card {
+    padding: 24px 20px;
+    flex: 0 0 auto;
+}
+
+/* Shared Title & Separator */
+.section-title {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: #51250E;
+    margin-bottom: 16px;
+}
+
+.separator {
+    border: 1px solid #E3E8EF;
+    margin-bottom: 24px;
+}
+
+/* Info Content Styles */
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* === ICONS: force the actual image to be exactly 36x36 ===
+   - remove padding so the image box totals 36x36
+   - use object-fit: contain so aspect ratio is preserved
+   - border-radius kept optional (circular) — change/remove as needed
+*/
+.info-icon {
+    width: 36px;
+    height: 36px;
+    padding: 0;               /* ensure total size is exactly 36x36 */
+    flex-shrink: 0;
+    box-sizing: border-box;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;       /* optional: makes icon circular */
+    background: transparent;
+}
+
+/* If the icon is an <img class="info-icon"> this makes it fill the box */
+.info-item img.info-icon {
+    width: 36px;
+    height: 36px;
+    display: block;
+    object-fit: contain;
+}
+
+/* If you use an <img> inside a wrapper with .info-icon class (rare), this covers it */
+.info-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.info-text {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 0px;
+    color: #4B5565;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+/* Show full email on hover */
+.info-text:hover {
+    overflow: visible;
+    white-space: normal;
+    word-break: break-all;
+}
+
+/* Business Hours Styles */
+.business-hours {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.hours-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.day-label {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 0px;
+    color: #0D121C;
+}
+
+.time-label {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 0px;
+    color: #4B5565;
+}
+
+/* Form Styles */
+/* .contact-form is a column flex: .form-body fills available height and scrolls if needed */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1 1 auto; /* let the form fill the container vertically */
+}
+
+/* the scrollable area that contains rows and textarea */
+.form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    flex: 1 1 auto;
+    overflow: auto; /* prevents textarea from growing the outer container */
+    padding-right: 6px; /* small buffer for scrollbar */
+}
+
+/* form actions (submit) sits after the scrollable body */
+.form-actions {
+    flex: 0 0 auto;
+    margin-top: 8px;
+}
+
+/* ======= responsive form layout using CSS Grid =======
+   - Two columns will appear only if the form container can fit two
+     columns each at the min width (260px). Otherwise inputs stack.
+   - Adjust 260px if you want to change the threshold.
+   ================================================================== */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    align-items: start;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* make full-width group a flex column and allow it to grow inside form-body */
+.form-group.full-width {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 auto;
+}
+
+/* label + input styling */
+.field-label {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: #0D121C;
+}
+
+.form-field {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #E3E8EF;
+    background: #F2F2F2;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22.4px;
+    letter-spacing: 0px;
+    color: #0D121C;
+}
+
+/* placeholder + focus */
+.form-field::placeholder {
+    color: #697586;
+}
+
+.form-field:focus {
+    outline: none;
+    border-color: #F3702B;
+}
+
+/* textarea: expand to fill available vertical space inside .form-body,
+   but keep practical limits so UX stays good on very tall screens */
+.message-field {
+    /* allow textarea to grow to fill available space in form-body */
+    flex: 1 1 auto;
+    min-height: 160px;    /* comfortable default */
+    max-height: calc(100vh - 280px); /* avoid extremely large heights; adjusts with viewport */
+    resize: vertical;
+    overflow: auto;
+    font-family: 'Geist', sans-serif;
+}
+
+/* submit button */
+.submit-btn {
+    width: 200px;
+    height: 55px;
+    padding: 14px 40px;
+    border-radius: 50px;
+    background: #F3702B;
+    border: none;
+    cursor: pointer;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+
+    transition: background 0.3s ease;
+    display: inline-block;
+}
+
+.submit-btn:hover {
+    background: #e05e1a;
+}
+
+/* Map Section */
+.map-section {
+    background: #FFFFFF;
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.location-map {
+    width: 100%;
+    height: 453px;
+    border: 0;
+    border-radius: 30px;
+    opacity: 1;
+    display: block;
+}
+
+/* CTA Section */
+.cta-section {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+    background: #FFFAED;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    overflow: hidden;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* CTA typography & images preserved */
+.cta-heading {
+    font-family: 'Geist', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #311609;
+    margin-bottom: 32px;
+}
+
+.cta-subheading {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #163C45;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    height: 55px;
+    padding: 14px 40px;
+    border-radius: 50px;
+    background: #F3702B;
+    border: none;
+    cursor: pointer;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e05e1a;
+}
+
+/* CTA Images */
+.cta-image {
+    position: absolute;
+    border-radius: 25px;
+    opacity: 1;
+    object-fit: cover;
+}
+
+/* Image positions kept as before */
+.image-1 { width: 207px; height: 200px; top: 80px; left: 3%; }
+.image-2 { width: 205px; height: 153px; top: 60px; right: 4%; }
+.image-3 { width: 172px; height: 171px; bottom: 180px; left: 18%; }
+.image-4 { width: 180px; height: 184px; bottom: 150px; right: 14%; }
+
+/* ---------- NEW: change middle section to vertical flow at 780px and below ----------
+   This affects the entire middle section (form container + info sidebar),
+   not just the form fields. ---------------------------------------------------------------- */
+@media (max-width: 780px) {
+    .section-layout {
+        flex-direction: column;
+        gap: 32px;
+        padding: 0 15px;
+        align-items: stretch;
+    }
+
+    /* keep form first, info second when stacked */
+    .form-container { order: 1; }
+    .info-sidebar { order: 2; }
+
+    .form-container {
+        flex: 1 1 auto;
+    }
+
+    .info-sidebar {
+        flex: 1 1 auto;
+    }
+
+    /* mobile: allow message to be taller naturally */
+    .message-field {
+        max-height: none;
+        min-height: 160px;
+        flex: 0 0 auto;
+    }
+
+    /* When stacked make form and sidebar padding smaller for narrow screens */
+    .form-container { padding: 24px 16px; }
+    .info-card { padding: 20px 14px; }
+}
+
+/* Responsive adjustments (other breakpoints remain) */
+@media (max-width: 1200px) {
+    .cta-section { min-height: 850px; }
+    .image-1 { top: 40px; }
+    .image-2 { top: 30px; }
+}
+
+@media (max-width: 1024px) {
+    .cta-section { min-height: 900px; }
+    .image-1 { top: 20px; }
+    .image-2 { top: 20px; }
+    .image-3 { bottom: 120px; }
+    .image-4 { bottom: 100px; }
+}
+
+@media (max-width: 900px) {
+    .cta-section { min-height: 950px; }
+    .image-1 { top: 15px; width: 190px; height: 185px; }
+    .image-2 { top: 15px; width: 190px; height: 140px; }
+    .image-3 { bottom: 100px; width: 160px; height: 160px; }
+    .image-4 { bottom: 90px; width: 170px; height: 174px; }
+}
+
+@media (max-width: 768px) {
+    .contact-heading { font-size: 40px; }
+    .contact-description { font-size: 15px; line-height: 23px; }
+
+    .location-map { height: 350px; }
+    .contact-section { padding: 60px 15px; }
+    .map-section { padding: 60px 15px; }
+
+    .cta-section { min-height: 1000px; }
+    .cta-heading { font-size: 32px; }
+    .cta-subheading { font-size: 16px; line-height: 24px; }
+
+    .image-1 { top: 20px; width: 170px; height: 165px; }
+    .image-2 { top: 20px; width: 170px; height: 125px; }
+    .image-3 { bottom: 80px; width: 145px; height: 145px; }
+    .image-4 { bottom: 70px; width: 150px; height: 154px; }
+}
+
+@media (max-width: 660px) {
+    .form-container { padding: 24px 20px; }
+    .info-card { padding: 20px 16px; }
+}
+
+@media (max-width: 480px) {
+    .contact-heading { font-size: 36px; }
+    .contact-description { font-size: 14px; line-height: 22px; }
+
+    .contact-container { padding: 40px 15px; margin-bottom: 40px; }
+    .contact-section { padding: 50px 15px; }
+
+    .section-layout { padding: 0 10px; }
+    .form-container { padding: 20px 16px; }
+    .info-card { padding: 18px 14px; }
+
+    .location-map { height: 300px; border-radius: 20px; }
+    .map-section { padding: 50px 15px; }
+    .map-container { padding: 0 10px; }
+
+    .cta-section { min-height: 700px; padding: 40px 20px; }
+    .cta-heading { font-size: 28px; }
+    .cta-subheading { font-size: 14px; line-height: 22px; }
+
+    .cta-image { display: block; }
+    .image-1 { width: 120px; height: 115px; top: 25px; left: 15px; }
+    .image-2 { width: 120px; height: 90px; top: 25px; right: 15px; }
+    .image-3 { width: 110px; height: 110px; bottom: 25px; left: 15px; }
+    .image-4 { width: 110px; height: 112px; bottom: 25px; right: 15px; }
+
+    .cta-content { padding: 0 10px; }
+}

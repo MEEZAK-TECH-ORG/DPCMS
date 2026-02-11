@@ -1,36 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Login page">
-    <title>Login - DPCMS</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - DPCMS</title>
+
+  <link rel="stylesheet" href="Login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/pages/about/">About</a></li>
-                <li><a href="/pages/team/">Our Team</a></li>
-                <li><a href="/pages/ministry/">Our Ministry</a></li>
-                <li><a href="/pages/contact/">Contact</a></li>
-                <li><a href="/pages/register/">Register</a></li>
-                <li><a href="/pages/login/" class="active">Login</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- MOBILE FIXED SVG (visible only when width < 1000px) -->
+  <div class="svg-fixed" aria-hidden="true">
+    <svg viewBox="0 0 606 369" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true" role="img" focusable="false">
+      <path d="M40.5 6C24.6313 4.04326 0 0 0 0H606.5V368.5C606.5 368.5 594.444 323.99 579.5 299C572.883 287.934 568.954 281.735 560.5 272C550.802 260.834 532.5 246.5 532.5 246.5C532.5 246.5 516.219 236.168 504.5 233C492.963 229.881 485.951 230.45 474 230.5C462.633 230.548 456.186 230.976 445 233C433.625 235.059 427.389 237.119 416.5 241C403.166 245.753 383.5 256 383.5 256C383.5 256 323 282 319 282.5C315 283 308.05 282.362 303.5 278C298.269 272.986 299 260 299 260C299 260 299 247.5 303.5 233C308 218.5 383 111 383.5 109.5C384 108 384.834 105.427 383.5 103.5C382.094 101.469 380.5 100.5 377.5 101.5C374.5 102.5 355.253 121.064 340.5 133C322.951 147.198 313.277 155.472 294.5 168C270.504 184.01 257.15 194.252 230 204C211.858 210.514 201.205 213.845 182 215.5C170.911 216.455 164.581 216.539 153.5 215.5C146.021 214.798 141.48 215.275 134.5 212.5C128.711 210.198 125.093 208.696 121 204C117.039 199.456 115.899 195.863 114.5 190C112.868 183.163 113.751 178.989 114.5 172C115.136 166.06 115.574 162.655 117.5 157C120.75 147.458 125.281 143.301 131 135C138.959 123.449 146.963 119.412 153.5 107C157.962 98.5274 159.765 93.3112 162 84C163.431 78.038 164.006 74.6114 164.5 68.5C165.004 62.272 166.174 58.52 164.5 52.5C162.469 45.1945 158.811 41.9117 153.5 36.5C146.251 29.1139 140.396 26.8382 131 22.5C121.693 18.2029 115.95 16.9647 106 14.5C96.371 12.1149 90.8123 11.4578 81 10C65.2794 7.66441 56.2737 7.94504 40.5 6Z" fill="url(#mobileGrad)"/>
+      <defs>
+        <linearGradient id="mobileGrad" x1="465.5" y1="147" x2="-19.9865" y2="195.239" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#F5884E"/>
+          <stop offset="1" stop-color="#8F4F2E"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
 
-    <main>
-        <h1>Login</h1>
-        <p>This is the login page.</p>
-    </main>
+  <div class="container">
+    <!-- LEFT (desktop only) -->
+    <section class="left-section" aria-hidden="false">
+      <div class="svg-decoration" aria-hidden="true">
+        <svg width="606" height="369" viewBox="0 0 606 369" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" focusable="false">
+          <path d="M40.5 6C24.6313 4.04326 0 0 0 0H606.5V368.5C606.5 368.5 594.444 323.99 579.5 299C572.883 287.934 568.954 281.735 560.5 272C550.802 260.834 532.5 246.5 532.5 246.5C532.5 246.5 516.219 236.168 504.5 233C492.963 229.881 485.951 230.45 474 230.5C462.633 230.548 456.186 230.976 445 233C433.625 235.059 427.389 237.119 416.5 241C403.166 245.753 383.5 256 383.5 256C383.5 256 323 282 319 282.5C315 283 308.05 282.362 303.5 278C298.269 272.986 299 260 299 260C299 260 299 247.5 303.5 233C308 218.5 383 111 383.5 109.5C384 108 384.834 105.427 383.5 103.5C382.094 101.469 380.5 100.5 377.5 101.5C374.5 102.5 355.253 121.064 340.5 133C322.951 147.198 313.277 155.472 294.5 168C270.504 184.01 257.15 194.252 230 204C211.858 210.514 201.205 213.845 182 215.5C170.911 216.455 164.581 216.539 153.5 215.5C146.021 214.798 141.48 215.275 134.5 212.5C128.711 210.198 125.093 208.696 121 204C117.039 199.456 115.899 195.863 114.5 190C112.868 183.163 113.751 178.989 114.5 172C115.136 166.06 115.574 162.655 117.5 157C120.75 147.458 125.281 143.301 131 135C138.959 123.449 146.963 119.412 153.5 107C157.962 98.5274 159.765 93.3112 162 84C163.431 78.038 164.006 74.6114 164.5 68.5C165.004 62.272 166.174 58.52 164.5 52.5C162.469 45.1945 158.811 41.9117 153.5 36.5C146.251 29.1139 140.396 26.8382 131 22.5C121.693 18.2029 115.95 16.9647 106 14.5C96.371 12.1149 90.8123 11.4578 81 10C65.2794 7.66441 56.2737 7.94504 40.5 6Z" fill="url(#desktopGrad)"/>
+          <defs>
+            <linearGradient id="desktopGrad" x1="465.5" y1="147" x2="-19.9865" y2="195.239" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#F5884E"/>
+              <stop offset="1" stop-color="#8F4F2E"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
-    <footer>
-        <p>&copy; 2026 DPCMS. All rights reserved.</p>
-    </footer>
+      <div class="welcome-content" role="region" aria-label="Welcome">
+        <h1 class="welcome-title">Welcome to DPCMS!</h1>
+        <p class="welcome-subtitle">Let's make your work more organized and easily using the lorem Dashboard.</p>
 
-    <script src="/assets/js/main.js"></script>
+        <div class="profile-images" aria-hidden="true">
+          <div class="profile-image profile-1"><img src="../../assets/images/img1.jpg" alt=""></div>
+          <div class="profile-image profile-2"><img src="../../assets/images/img2.jpg" alt=""></div>
+          <div class="profile-image profile-3"><img src="../../assets/images/img3.jpg" alt=""></div>
+          <div class="profile-image profile-4"><img src="../../assets/images/img4.jpg" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT (form) -->
+    <section class="right-section" aria-label="Login form">
+      <div class="form-container">
+        <div class="logo">
+          <img src="../../assets/images/Logo.png" alt="DPCMS Logo" class="logo-image">
+        </div>
+
+        <h2 class="form-title">Member's Login Page</h2>
+        <p class="form-subtitle">Join Destiny Promoters Cooperative Today</p>
+
+        <form class="login-form" novalidate>
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+          </div>
+
+          <div class="forgot-password">
+            <a href="#" class="forgot-link">Forget Password?</a>
+          </div>
+
+          <button type="submit" class="submit-btn">Login</button>
+
+          <p class="register-link">Don't have an account yet? <a href="#">Register</a></p>
+        </form>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
