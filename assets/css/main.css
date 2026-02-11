@@ -2034,3 +2034,206 @@ footer {
         margin-top: 1.5rem;
     }
 }
+
+/* Ministry Page Styles */
+.ministry-hero {
+    text-align: center;
+    padding: 4rem 1rem 5rem;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+.ministry-label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: medium;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #CA5D24;
+    border: 1px solid #F7A072;
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #FFFAED;
+}
+
+.ministry-heading {
+    font-size: 56px;
+    font-weight: 700;
+    font-size: extrabold;
+    color: #51250E;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    max-width: 824px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ministry-description {
+    font-size: 18px;
+    font-weight:400;
+    font-style: medium;
+    line-height: 1.7;
+    color: #697586;
+    max-width: 824px;
+    margin: 0 auto 3rem;
+}
+
+.ministry-image-wrap {
+    margin: 0 auto 3rem;
+    max-width: 522px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.ministry-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ministry-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.ministry-card {
+    background-color: #fff;
+    border: 1px solid #9AA4B2;
+    border-radius: 16px;
+    width: 100%;
+    height:369px;
+    padding: 2rem;
+    text-align: left;
+}
+
+.ministry-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.ministry-card-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    color: #3b82f6;
+}
+
+.ministry-card-title {
+    font-size: 32px;
+    font-weight: 700;
+    font-size: bold;
+    color: #51250E;
+    margin: 0;
+}
+
+.ministry-card-text {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    font-style: medium;
+    line-height: 1.7;
+    color: #697586;
+    margin-bottom: 1.5rem;
+}
+
+.ministry-card-reference {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: medium;
+    color: #697586;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Ministry hero responsive */
+@media (max-width: 768px) {
+    .ministry-hero {
+        padding: 3rem 1rem 4rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Reorder: label -> image -> heading -> description -> cards */
+    .ministry-label {
+        order: 1;
+        width: 280px;
+        margin: auto;
+        margin-bottom: 25px;
+        /* padding: 0.75rem 1rem; */
+        font-size: 16px;
+    }
+    .ministry-image{
+        width:274px;
+    }
+
+    .ministry-image-wrap {
+        order: 2;
+        margin-bottom: 2rem;
+        margin-top: 0;
+    }
+
+    .ministry-heading {
+        order: 3;
+        font-size: 24px;
+        margin-bottom: 1rem;
+        margin-top: 0;
+    }
+
+    .ministry-description {
+        order: 4;
+        font-size: 16px;
+        margin-bottom: 2rem;
+        margin-top: 0;
+    }
+
+    .ministry-cards {
+        order: 5;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        justify-items: center;
+    }
+
+    .ministry-card {
+        padding: 1.5rem;
+        /* width: 388px; */
+        height: 407px;
+        max-width: 388px;
+        max-height: 407px;
+        overflow: hidden;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        /* margin:0 0.25rem; */
+    }
+
+    .ministry-card-header {
+        flex-shrink: 0;
+        margin-bottom: 0.75rem;
+    }
+
+    .ministry-card-title {
+        font-size: 1.5rem;
+    }
+
+    .ministry-card-text {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        flex: 1;
+        overflow-y: auto;
+        margin-bottom: 1rem;
+    }
+
+    .ministry-card-reference {
+        font-size: 0.75rem;
+        flex-shrink: 0;
+    }
+}
