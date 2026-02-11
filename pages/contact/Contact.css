@@ -467,6 +467,16 @@ main {
     object-fit: cover;
 }
 
+/* Animation for mobile - subtle up-down movement */
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 /* Image positions kept as before */
 .image-1 { width: 207px; height: 200px; top: 80px; left: 3%; }
 .image-2 { width: 205px; height: 153px; top: 60px; right: 4%; }
@@ -569,15 +579,21 @@ main {
     .map-section { padding: 50px 15px; }
     .map-container { padding: 0 10px; }
 
-    .cta-section { min-height: 700px; padding: 40px 20px; }
-    .cta-heading { font-size: 28px; }
-    .cta-subheading { font-size: 14px; line-height: 22px; }
+    .cta-section { min-height: 550px; padding: 30px 20px; }
+    .cta-heading { font-size: 28px; margin-bottom: 20px; }
+    .cta-subheading { font-size: 14px; line-height: 22px; margin-bottom: 30px; }
 
-    .cta-image { display: block; }
-    .image-1 { width: 120px; height: 115px; top: 25px; left: 15px; }
-    .image-2 { width: 120px; height: 90px; top: 25px; right: 15px; }
-    .image-3 { width: 110px; height: 110px; bottom: 25px; left: 15px; }
-    .image-4 { width: 110px; height: 112px; bottom: 25px; right: 15px; }
+    .cta-image { 
+        display: block;
+        animation: floatUpDown 3s ease-in-out infinite;
+    }
+    .image-1 { width: 120px; height: 115px; top: 15px; left: 15px; }
+    .image-2 { width: 120px; height: 90px; top: 15px; right: 15px; }
+    .image-3 { width: 110px; height: 110px; bottom: 15px; left: 15px; }
+    .image-4 { width: 110px; height: 112px; bottom: 15px; right: 15px; }
 
-    .cta-content { padding: 0 10px; }
+    .cta-content { 
+        padding: 0 10px;
+        margin-top: -10px;
+    }
 }
