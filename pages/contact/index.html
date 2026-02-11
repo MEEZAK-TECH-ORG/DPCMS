@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact us page">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact us page" />
     <title>Contact - DPCMS</title>
+
+    <!-- global site CSS (keeps existing styles) -->
     <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- page-specific CSS (this file) -->
+    <link rel="stylesheet" href="Contact.css">
 </head>
 <body>
     <header>
@@ -65,8 +69,151 @@
     </div>
 
     <main>
-        <h1>Contact Us</h1>
-        <p>This is the contact page.</p>
+                <section class="contact-section">
+            <div class="section-layout">
+                <div class="form-container">
+                    <h2 class="section-title">Get in touch with us</h2>
+                    <div class="separator"></div>
+
+                    <!-- .contact-form keeps a structure where .form-body is scrollable,
+                         and .form-actions contains the submit button. -->
+                    <form class="contact-form" action="#" method="post" novalidate>
+                        <div class="form-body">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="field-label" for="name">Name</label>
+                                    <input id="name" name="name" type="text" class="form-field" placeholder="Enter your name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="field-label" for="phone">Phone number</label>
+                                    <input id="phone" name="phone" type="tel" class="form-field" placeholder="Enter your phone number">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="field-label" for="email">Email</label>
+                                    <input id="email" name="email" type="email" class="form-field" placeholder="Enter your email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="field-label" for="subject">Subject</label>
+                                    <input id="subject" name="subject" type="text" class="form-field" placeholder="Enter subject">
+                                </div>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="field-label" for="message">Message</label>
+                                <textarea id="message" name="message" class="form-field message-field" placeholder="Enter your message"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="submit-btn">Send message</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Container (40%) -->
+                <div class="info-sidebar">
+                    <!-- Contact Information Card -->
+                    <div class="info-card">
+                        <h2 class="section-title">Contact information</h2>
+                        <div class="separator"></div>
+
+                        <div class="info-content">
+                            <div class="info-item">
+                                <img src="/assets/images/call.svg" alt="Phone" class="info-icon">
+                                <span class="info-text">+234 08184212487</span>
+                            </div>
+                            <div class="info-item">
+                                <img src="/assets/images/call.svg" alt="Phone" class="info-icon">
+                                <span class="info-text">+234 09031504010</span>
+                            </div>
+                            <div class="info-item">
+                                <img src="/assets/images/call.svg" alt="Phone" class="info-icon">
+                                <span class="info-text">+234 08090740446</span>
+                            </div>
+                            <div class="info-item">
+                                <img src="/assets/images/message.svg" alt="Email" class="info-icon">
+                                <span class="info-text">support@destinypromoterscooperative.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address Card -->
+                    <div class="info-card">
+                        <h2 class="section-title">Address</h2>
+                        <div class="separator"></div>
+
+                        <div class="info-content">
+                            <div class="info-item">
+                                <img src="/assets/images/locatio.svg" alt="Location" class="info-icon">
+                                <span class="info-text">Office 55 Demurin Road, Opposite Elebiju Bustop, Ketu Lagos</span>
+                            </div>
+                            <div class="info-item">
+                                <img src="/assets/images/locatio.svg" alt="Location" class="info-icon">
+                                <span class="info-text">20 Demurin Road, Mascara Bus-top, Ketu Lagos(New office)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours Card -->
+                    <div class="info-card">
+                        <h2 class="section-title">Business Hours</h2>
+                        <div class="separator"></div>
+
+                        <div class="business-hours">
+                            <div class="hours-column">
+                                <span class="day-label">Monday - Friday</span>
+                                <span class="time-label">9:00am - 05:00pm</span>
+                            </div>
+                            <div class="hours-column">
+                                <span class="day-label">Saturday</span>
+                                <span class="time-label">9:00am - 03:00pm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4110184140636!2d3.3971901863230514!3d6.595730688838117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b933c3d9677eb%3A0x615cdbd60a629815!2sLarjib%20Nigeria%20Limited!5e0!3m2!1sen!2sng!4v1770711132393!5m2!1sen!2sng"
+                    class="location-map"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <img src="/assets/images/image1.jpg" alt="Member 1" class="cta-image image-1">
+            <img src="/assets/images/image2.jpg" alt="Member 2" class="cta-image image-2">
+            <img src="/assets/images/image3.jpg" alt="Member 3" class="cta-image image-3">
+            <img src="/assets/images/image4.jpg" alt="Member 4" class="cta-image image-4">
+
+            <div class="cta-content">
+                <h2 class="cta-heading">
+                    Join us today and get empowered,<br>
+                    Grow your finances and improve<br>
+                    stable livelihood
+                </h2>
+
+                <p class="cta-subheading">
+                    500K + Active users enjoying the benefits
+                </p>
+
+                <button class="cta-button">Get started now</button>
+            </div>
+        </section>
+
     </main>
 
     <footer>
