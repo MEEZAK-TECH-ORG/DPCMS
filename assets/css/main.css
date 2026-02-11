@@ -550,3 +550,214 @@ footer p {
         width: 100%;
     }
 }
+
+/* Join / Promo section – full width, central CTA, 4 images with float animation */
+.join-promo {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 4rem 1.5rem;
+    background-color: #faf8f5;
+}
+
+.join-promo-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.join-promo-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 0 0 auto;
+}
+
+.join-promo-images-left {
+    align-items: flex-end;
+}
+
+.join-promo-images-right {
+    align-items: flex-start;
+}
+
+.join-promo-img-wrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 280px;
+}
+
+/* Position shifts: rectangle1 left, rectangle3 right, rectangle2 right, rectangle4 left */
+.join-promo-img-1 {
+    left: -48px;
+
+}
+
+.join-promo-img-3 {
+    left: 48px;
+}
+
+.join-promo-img-2 {
+    left: 48px;
+    top:30px;
+}
+
+.join-promo-img-4 {
+    left: -48px;
+    top:30px;
+}
+
+.join-promo-img-wrap .join-promo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: top;
+}
+
+/* Float animation – runs when section is in view (JS adds .in-view) */
+.join-promo.in-view .join-promo-img-wrap {
+    animation: joinPromoFloat 4s ease-in-out infinite;
+}
+
+.join-promo.in-view .join-promo-img-1 { animation-delay: 0s; }
+.join-promo.in-view .join-promo-img-2 { animation-delay: 0.5s; }
+.join-promo.in-view .join-promo-img-3 { animation-delay: 1s; }
+.join-promo.in-view .join-promo-img-4 { animation-delay: 1.5s; }
+
+@keyframes joinPromoFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.join-promo-cta {
+    flex: 0 0 auto;
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-promo-heading {
+    font-size: 40px;
+    font-weight: 700;
+    font-style: extrabold   ; 
+    max-width: 676px;
+    width: 100%;
+    color: #311609;
+    line-height: 100%;
+    margin: 0 auto 0.75rem;
+    text-align: center;
+}
+
+.join-promo-subtext {
+    font-size: 18px;
+    font-weight: 500;
+    font-style: medium;
+    color: #163C45;
+    margin-bottom: 1.5rem;
+}
+
+.join-promo-btn {
+    display: inline-block;
+    background-color: #F3702B;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: medium;
+    padding: 0.875rem 1.8rem;
+    border-radius: 26px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.join-promo-btn:hover {
+    background-color: #a84d1e;
+    transform: translateY(-2px);
+}
+
+/* Join promo responsive */
+@media (max-width: 1024px) {
+    .join-promo-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .join-promo-images-left,
+    .join-promo-images-right {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1 100%;
+    }
+
+    .join-promo-images-left {
+        order: 1;
+    }
+
+    .join-promo-cta {
+        order: 2;
+        flex: 1 1 100%;
+    }
+
+    .join-promo-images-right {
+        order: 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .join-promo {
+        padding: 3rem 1rem;
+    }
+
+    .join-promo-inner {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .join-promo-images {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .join-promo-img-wrap {
+        max-width: 160px;
+    }
+
+    .join-promo-img-1,
+    .join-promo-img-2,
+    .join-promo-img-3,
+    .join-promo-img-4 {
+        left: 0;
+    }
+
+    .join-promo-heading {
+        font-size: 1.35rem;
+    }
+
+    .join-promo-subtext {
+        font-size: 0.9375rem;
+    }
+
+    .join-promo-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9375rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-promo-img-wrap {
+        max-width: 140px;
+    }
+}
