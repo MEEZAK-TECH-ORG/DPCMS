@@ -1,3 +1,11 @@
+body.home {
+    overflow-x: hidden;
+}
+
+main {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 .hero {
     display: flex;
@@ -5,10 +13,10 @@
     justify-content: center;
     min-height: 60vh;
     height: 60vh;
-    padding: 2rem;
+    padding: 2rem 50px;
     position: relative;
-    margin: -2rem -1rem; 
-    width: calc(100% + 2rem);
+    margin: 0;
+    width: 100%;
     background-color: rgba(255, 250, 245, 1);
     background-image: radial-gradient(ellipse farthest-side at center center, rgba(243, 112, 43, 0.2) 0%, rgba(243, 112, 43, 0.15) 20%, rgba(243, 112, 43, 0.1) 40%, rgba(243, 112, 43, 0.06) 60%, rgba(243, 112, 43, 0.03) 80%, rgba(243, 112, 43, 0.01) 100%);
     overflow: hidden;
@@ -16,33 +24,32 @@
 
 .hero-content {
     text-align: center;
-    /* max-width: 1200px; */
     width: 100%;
     position: relative;
     z-index: 1;
 }
 
 .hero-headline {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: 56px;
     font-weight: bold;
-    color: #713C16;
+    color: rgba(81, 37, 14, 1);
     line-height: 1.2;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .hero-description {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: #333333;
     line-height: 1.6;
-    /* max-width: 800px; */
-    /* margin: 0 auto 3rem; */
 }
 
 .cta-button {
     background-color: #F3702B;
     color: white;
     border: none;
-    padding: 1.5rem 3rem;
+    padding: 16px 36px;
+    margin-top: 32px;
     font-size: 16px;
     font-weight: 600;
     border-radius: 50px;
@@ -51,7 +58,7 @@
 }
 
 .cta-button:hover {
-    background-color:rgba(247, 160, 114, 1);
+    background-color: rgba(247, 160, 114, 1);
     transform: translateY(-2px);
 }
 
@@ -61,21 +68,29 @@
 
 /* Cards Section */
 .cards-section {
-    padding: 4rem 2rem;
+    padding: 4rem 50px;
   
 }
 
 .cards-container {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-rows: 520px; 
     gap: 2rem;
     align-items: stretch;
     justify-content: center;
     position: relative;
     z-index: 1;
+}
+
+.cards-container,
+.who-we-are-container,
+.thrift-packages-container,
+.thrift-cards-grid {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .left-column {
@@ -103,7 +118,8 @@
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #f5f5f5;
-    width: 317px;
+    width: 100%;
+    max-width: 317px;
     height: 234px;
 }
 
@@ -115,7 +131,8 @@
 }
 
 .large-image-card {
-    width: 658px;
+    width: 100%;
+    max-width: 658px;
     height: 100%;
     min-height: 0;
     border-radius: 25px;
@@ -130,7 +147,8 @@
 
 .info-card {
     position: relative;
-    background-color: #F7A072;
+    background-color: #EB9A6D;
+    background-image: none;
     border-radius: 20px;
     width: 100%;
     flex: 1;
@@ -140,16 +158,22 @@
     overflow: hidden;
 }
 
+.info-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(248, 111, 37, 1) 0 18%, transparent 18.5%),
+        radial-gradient(circle at 100% 0%, rgba(245, 185, 154, 0.55) 0 27%, transparent 27.5%),
+        radial-gradient(circle at 100% 0%, rgba(245, 185, 154, 0.4) 0 36%, transparent 36.5%);
+    z-index: 0;
+    pointer-events: none;
+}
+
 
 .info-card-decoration {
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: rgba(249, 183, 149, 1); 
-    z-index: 0;
+    display: none;
 }
 
 /* Arc 2 – mid-tone light orange, lighter than innermost */
@@ -161,7 +185,7 @@
     width: 180px;
     height: 200px;
     border-radius: 50%;
-    background:rgba(247, 160, 114, 1); /* Lighter, more pastel orange */
+    background: rgba(247, 160, 114, 1); /* Lighter, more pastel orange */
     z-index: 1;
 }
 
@@ -277,18 +301,16 @@
 /* Who We Are Section */
 .who-we-are-section {
     background-color: #E8F4F8; 
-    padding: 80px; 
-    width: 100vw;
+    padding: 4rem 50px;
+    width: 100%;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .who-we-are-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -391,32 +413,238 @@
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
 }
 
-/* Thrift Packages Section */
-.thrift-packages-section {
-    background-color: #4A90A4; /* Blue background for header */
-    padding: 0;
-    width: 100vw;
+/* How It Works Section */
+.how-it-works-section {
+    padding: 5rem 50px;
+    background-color: #fff;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.how-it-works-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.how-it-works-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: bold;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.how-it-works-description {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: #666666;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 900px;
+    margin-bottom: 4rem;
+}
+
+.how-it-works-content {
     position: relative;
+    width: 100%;
+    max-width: 1200px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.how-it-works-blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: #F0F6F9;
+    border-radius: 50% 40% 60% 50%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    margin-left: 0;
-    margin-right: 0;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    filter: blur(60px);
+    opacity: 0.6;
+}
+
+.how-it-works-image-wrapper {
+    position: relative;
+    z-index: 2;
+    margin-right: 2rem;
+}
+
+.how-it-works-image {
+    width: 654px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.how-it-works-card {
+    z-index: 3;
+}
+
+.how-it-works-cards {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.how-it-works-card {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    /* max-width: 430px;
+    max-height: 212px; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* .card-text {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: medium;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin: 0;
+} */
+.card-text-1 {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: medium;
+    line-height: 25px;
+    color: #FFFFFF;
+    margin: 0;
+}
+.card-text-2 {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: medium;
+    line-height: 25px;
+    color: #FFFFFF;
+    margin: 0;
+}
+.card-text-3 {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: medium;
+    line-height: 25px;
+    color: #4d5663;
+    margin: 0;
+}
+
+.card-text-4 {
+    font-size: 16px;
+    font-weight: 500;
+    font-style: medium;
+    line-height: 25px;
+    color: #000000;
+    margin: 0;
+}
+/* Card 1 - Top Left (Blue) */
+.card-1 {
+    top: 30%;
+    left: -5%;
+    width: 368px;
+    max-height: 187px;
+    background-color: #6EA3DB;
+    border: 1px solid #B6D1ED
+}
+
+.card-1 .card-number {
+    background-color: #ffff;
+    
+}
+.card-number{
+    color: #000000;
+}
+
+/* Card 2 - Top Right (Orange) */
+.card-2 {
+    top: 5%;
+    right: -7%;
+    width: 430px;
+    height: 212px;
+    background-color: #F5884E;
+}
+
+.card-2 .card-number {
+    background-color: #ffff;
+}
+
+/* Card 3 - Bottom Right (Purple) */
+.card-3 {
+    bottom:-8%;
+    right: 1%;
+    width: 430px;
+    height: 223px;
+    background-color: #ECE4F9;
+}
+
+.card-3 .card-number {
+    background-color: #ffff;
+}
+
+/* Card 4 - Bottom Left (Green) */
+.card-4 {
+    bottom:-16%;
+    left: 5%;
+    width: 430px;
+    height: 195px;
+    background-color: #BAE0BD;
+    border: 1px solid #FBCFB8;
+}
+
+.card-4 .card-number {
+    background-color: #ffff;
+}
+
+.thrift-packages-section {
+    background-color:rgba(238, 242, 246, 1); 
+    padding: 0;
+    width: 100%;
+    position: relative;
+    margin: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .thrift-packages-header {
-    background-color: #476A8D; /* Darker blue-grey background */
-    padding: 4rem 2rem 0;
+    background-color:rgba(91, 127, 164, 1);
+    padding: 4rem 50px calc(2rem + 9.375rem) 50px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .thrift-packages-container {
-    max-width: 1400px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -427,68 +655,83 @@
 }
 
 .thrift-cards-wrapper {
-    background-color: #F4F7F9; /* Light grey-white background */
-    padding: 0 2rem 4rem;
+    background-color: #F4F7F9; 
+    padding: 0 50px 4rem;
     width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    z-index: 0;
-    margin-top: -100px; /* Pull cards up to overlap backgrounds */
+    z-index: 1;
+    margin-top: 0;
 }
 
 .thrift-packages-heading {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: 48px;
     font-weight: bold;
-    color: #333333;
+    color: rgba(255, 255, 255, 1);
     text-align: center;
     margin: 0;
 }
 
 .thrift-packages-description {
-    font-size: clamp(1rem, 2vw, 1.125rem);
-    color: #666666;
-    line-height: 1.7;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 1);
+    line-height: 28px;
     text-align: center;
     max-width: 900px;
+    font-weight: 400;
     margin: 0;
     padding: 0;
 }
 
 .thrift-cards-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four cards in a row on desktop */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.5rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     position: relative;
-    top: 50px; 
+    top: -5.375rem; 
     z-index: 2;
  
+}
+
+/* Prevent page-wide horizontal overflow on medium desktop widths */
+@media (max-width: 980px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-items: center;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        max-width: 658px;
+    }
+
+    .large-image-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 658 / 521;
+    }
 }
 
 .thrift-card {
     background-color: #ffffff;
     border-radius: 12px;
-    padding: 2rem;
+    min-height: 320px;
+    width: 100%;
+    padding: 24px 26px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Alternating borders: Card 1 & 3 have top border, Card 2 & 4 have bottom border */
-.thrift-card:nth-child(1),
-.thrift-card:nth-child(3) {
-    border-top: 5px solid #FF8C42; /* Orange top border */
-}
-
-.thrift-card:nth-child(2),
-.thrift-card:nth-child(4) {
-    border-bottom: 5px solid #FF8C42; /* Orange bottom border */
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .thrift-card:hover {
@@ -496,17 +739,37 @@
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
+
+.thrift-card:nth-child(1),
+.thrift-card:nth-child(3) {
+    border-top: 5px solid #FF8C42; 
+}
+
+.thrift-card:nth-child(2),
+.thrift-card:nth-child(4) {
+    border-bottom: 5px solid #FF8C42; 
+}
+
 .thrift-card-icon {
     width: 64px;
     height: 64px;
-    border-radius: 50%;
-    border: 2px solid #A8D9F0; /* Light blue outline */
+    flex-shrink: 0;
+    margin: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: #A8D9F0;
-    flex-shrink: 0;
-    margin: 0 auto;
+    justify-content: flex-start;
+    align-self: flex-start; 
+    border-radius: 50%;
+    border-style: dashed;
+    border-color: rgba(110, 163, 219, 1);
+    padding: 12px 14px;
+}
+
+.thrift-card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .thrift-card-title {
@@ -514,7 +777,7 @@
     font-weight: 600;
     color: #333333;
     margin: 0;
-    text-align: center;
+    text-align: left;
 }
 
 .thrift-card-description {
@@ -523,7 +786,7 @@
     line-height: 1.6;
     margin: 0;
     flex-grow: 1;
-    text-align: center;
+    text-align: left;
 }
 
 .thrift-card-link {
@@ -552,15 +815,425 @@
     transform: translateX(5px);
 }
 
+/* Testimonials Section */
+.testimonials-section {
+    background-color: #f3f5f7;
+    padding: 5rem 50px;
+    --testimonial-panel-height: 550px;
+}
+
+.testimonials-container {
+    max-width: 100%;
+    margin: auto;
+}
+
+.testimonials-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-bottom: 2rem;
+}
+
+.testimonials-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #f0b08a;
+    background-color:rgba(255, 250, 237, 1);
+    border-radius: 999px;
+    color: rgba(202, 93, 36, 1);
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.testimonials-heading {
+    font-size: 40px;
+    line-height: 1.15;
+    color: #16181b;
+    margin: 0;
+    max-width: 520px;
+}
+
+.testimonials-intro {
+    margin: 0;
+    color: #2f343a;
+    line-height: 1.55;
+    font-size: 16px;
+    max-width: 430px;
+    justify-self: end;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.testimonials-image-panel {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: var(--testimonial-panel-height);
+    background: #dfe5eb;
+}
+
+.testimonials-image {
+    width: 100%;
+    height: 100%;
+    object-fit: center;
+    display: block;
+}
+
+.testimonial-nav {
+    position: absolute;
+    bottom: 1.25rem;
+    width: 64px;
+    height: 64px;
+    border: 6px solid rgba(152, 152, 152, 1);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 1);
+    color: #2b2f33;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); */
+}
+
+.testimonial-nav-prev { left: 1.25rem; }
+.testimonial-nav-next { right: 1.25rem; }
+
+.testimonial-nav-icon {
+    width: 37px;
+    height: 37px;
+    object-fit: contain;
+    display: block;
+}
+
+.testimonials-text-panel {
+    background: #e3e8ee;
+    border-radius: 18px;
+    padding: 2.5rem;
+    height: var(--testimonial-panel-height);
+    display: flex;
+}
+
+.testimonials-card {
+    background: rgba(255, 250, 237, 1);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonials-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 2;
+}
+
+.testimonials-stars .star-filled {
+    color: rgba(245, 136, 78, 1);
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.testimonials-stars .star-empty {
+    color: rgba(217, 217, 217, 1);
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.testimonial-quote {
+    margin: 0 0 1rem;
+    color: #5e6670;
+    line-height: 1.55;
+    font-size: 0.98rem;
+    flex: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 0.65rem;
+}
+
+.testimonial-avatar {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-name {
+    margin: 0;
+    color: rgba(19, 19, 19, 1);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.testimonial-role {
+    margin: 0.1rem 0 0;
+    color: rgba(90, 90, 89, 1);
+    font-size: 14px;
+}
+
+.testimonial-mark {
+    margin-left: auto;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-10px);
+}
+
+.testimonial-quote-icon {
+    width: 45px;
+    height: 35px;
+    object-fit: contain;
+    display: block;
+}
+
 /* Responsive Design */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1023px) {
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .hero-headline {
+        font-size: clamp(2.5rem, 5.2vw, 3.25rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.06rem;
+        line-height: 1.65;
+        max-width: 780px;
+        margin: 0 auto;
+    }
+
+    .cards-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1.5rem;
+        justify-items: center;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        max-width: 760px;
+    }
+
+    .image-wrapper {
+        gap: 1rem;
+    }
+
+    .image-card {
+        max-width: none;
+        height: auto;
+    }
+
+    .info-card {
+        min-height: 260px;
+        padding: 1.5rem 1.5rem 1.65rem;
+    }
+
+    .large-number {
+        font-size: clamp(2.7rem, 7vw, 3.5rem);
+    }
+
+    .members-text {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .who-we-are-section {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .who-we-are-description {
+        max-width: 780px;
+    }
+
+    .video-player-container {
+        max-width: 100%;
+    }
+
+    .how-it-works-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        margin-bottom: 0;
+    }
+
+    .how-it-works-description {
+        max-width: 720px;
+        margin-bottom: 2rem;
+    }
+
+    .how-it-works-content {
+        position: static;
+        min-height: 0;
+        max-width: 820px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
+
+    .how-it-works-blob {
+        display: none;
+    }
+
+    .how-it-works-image-wrapper {
+        margin-right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .how-it-works-image {
+        width: min(100%, 560px);
+        margin: 0 auto;
+    }
+
+    .how-it-works-cards {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .how-it-works-card,
+    .card-1,
+    .card-2,
+    .card-3,
+    .card-4 {
+        position: static;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        min-height: 180px;
+    }
+
+    .how-it-works-card {
+        padding: 1.25rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .thrift-packages-header {
+        padding: 3.5rem 1.5rem calc(2rem + 7rem) 1.5rem;
+    }
+
+    .thrift-packages-heading {
+        font-size: clamp(2.2rem, 4.8vw, 2.8rem);
+    }
+
+    .thrift-packages-description {
+        max-width: 760px;
+    }
+
+    .thrift-cards-wrapper {
+        padding: 0 1.5rem 3rem;
+    }
+
     .thrift-cards-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
+        top: -7rem;
+    }
+
+    .testimonials-section {
+        padding-top: 4rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .testimonials-top {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .testimonials-intro {
+        justify-self: start;
+        max-width: 760px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .testimonials-image-panel {
+        height: 440px;
+    }
+
+    .testimonials-text-panel {
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .testimonials-card {
+        min-height: 0;
+    }
+
+    .testimonial-avatar {
+        width: 68px;
+        height: 68px;
+    }
+
+    .testimonial-name {
+        font-size: 1.5rem;
+    }
+
+    .testimonial-nav {
+        width: 56px;
+        height: 56px;
+        border-width: 3px;
+    }
+
+    .testimonial-nav-icon {
+        width: 30px;
+        height: 30px;
     }
 }
 
-@media (min-width: 1025px) {
+@media (max-width: 1023px) {
+    .hero,
+    .cards-section,
+    .who-we-are-section,
+    .how-it-works-section,
+    .testimonials-section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .thrift-packages-header,
+    .thrift-cards-wrapper {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
     .thrift-cards-grid {
         grid-template-columns: repeat(4, 1fr); /* Four cards in a row on desktop */
     }
@@ -619,18 +1292,14 @@
 
     .image-wrapper {
         flex-direction: row; /* Two cards side-by-side */
-        gap: 1rem;
+        gap: 0.75rem;
         width: 100%;
         justify-content: center;
     }
 
     .image-card {
-        width: calc(50% - 0.5rem);
-        /* max-width: none; */
-        /* height: auto; */
-
-        width: 187px;
-        height: 138px;
+        width: calc(50% - 0.375rem);
+        height: auto;
         border-radius: 11px;
         aspect-ratio: 317 / 234;
         flex: 1;
@@ -639,7 +1308,6 @@
     .right-column {
         width: 100%;
         order: 3; /* Large image at bottom */
-        display: flex;
         display: none;
     }
 
@@ -652,29 +1320,186 @@
     }
 
     .info-card {
-        width:388px;
-        height: 210px;
-        padding: 1rem 1rem;
+        width: 100%;
+        max-width: 100%;
+        min-height: 200px;
+        height: auto;
+        padding: 0.95rem 0.95rem 1rem;
         border-radius: 11px;
         order: 2; /* Info card in middle */
+        background-color: #EB9A6D;
+        background-image: none;
+    }
+
+    .info-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background:
+            radial-gradient(circle at 100% 0%, rgba(248, 111, 37, 1) 0 18%, transparent 18.5%),
+            radial-gradient(circle at 100% 0%, rgba(245, 185, 154, 0.55) 0 27%, transparent 27.5%),
+            radial-gradient(circle at 100% 0%, rgba(245, 185, 154, 0.4) 0 36%, transparent 36.5%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .info-card-decoration {
+        display: none;
+    }
+
+    .info-card-content {
+        position: relative;
+        z-index: 1;
+        gap: 0.8rem;
     }
 
     .large-number {
-        font-size: 3rem;
+        font-size: clamp(2.5rem, 8.6vw, 3.2rem);
+        gap: 0.55rem;
+        align-items: baseline;
+        justify-content: flex-start;
     }
 
     .members-text {
+        font-size: clamp(1.95rem, 5vw, 2.35rem);
+        line-height: 1.05;
+    }
+
+    .info-card-button {
+        margin-top: 0.25rem;
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 999px;
+    }
+
+    /* How It Works Section - Mobile */
+    .how-it-works-section {
+        padding: 2.5rem 1rem 3rem;
+        margin-bottom: 0;
+    }
+
+    .how-it-works-heading {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        margin-bottom: 0.75rem;
+        color: #4a2a18;
+    }
+
+    .how-it-works-description {
+        max-width: 340px;
+        margin-bottom: 1.5rem;
+        font-size: 1.03rem;
+        line-height: 1.55;
+        color: #6b778c;
+    }
+
+    .how-it-works-content {
+        position: static;
+        min-height: 0;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .how-it-works-blob {
+        display: none;
+    }
+
+    .how-it-works-image-wrapper {
+        margin-right: 0;
+        width: 100%;
+        background: #d9e2ec;
+        border-radius: 16px;
+        padding: 0.65rem 0.65rem 0;
+        overflow: hidden;
+    }
+
+    .how-it-works-image {
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+
+    .how-it-works-cards {
+        position: static;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .how-it-works-card {
+        position: static;
+        width: 100%;
+        height: auto;
+        min-height: 160px;
+        border-radius: 16px;
+        padding: 1.1rem 1rem 1.2rem;
+        box-shadow: none;
+        gap: 0.95rem;
+    }
+
+    .card-number {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
         font-size: 1.25rem;
     }
 
+    .card-text-1,
+    .card-text-2,
+    .card-text-3,
+    .card-text-4 {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .card-1,
+    .card-2,
+    .card-3,
+    .card-4 {
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        width: 100%;
+        max-height: none;
+        border: none;
+    }
+
+    .card-1 { background-color: #7ca3d4; }
+    .card-2 { background-color: #e08d5d; }
+    .card-3 { background-color: #d8d2e7; }
+    .card-4 { background-color: #b8d8b9; }
+
+    .card-1 .card-number,
+    .card-2 .card-number,
+    .card-3 .card-number,
+    .card-4 .card-number {
+        background-color: #ffffff;
+        color: #2b2f33;
+    }
+
+    .card-text-1,
+    .card-text-2 {
+        color: #ffffff;
+    }
+
+    .card-text-3,
+    .card-text-4 {
+        color: #4d5663;
+    }
     /* Who We Are Section - Mobile */
     .who-we-are-section {
         padding: 3rem 1rem;
-        width: 100vw;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-left: 0;
-        margin-right: 0;
+        width: 100%;
+        margin: 0;
+        overflow-x: hidden;
     }
 
     .who-we-are-container {
@@ -706,8 +1531,12 @@
     }
 
     /* Thrift Packages Section - Mobile */
+    .thrift-packages-section {
+        background-color: rgba(91, 127, 164, 1);
+    }
+
     .thrift-packages-header {
-        padding: 3rem 1rem 0;
+        padding: 3rem 1rem calc(2rem + 9.375rem) 1rem;
     }
 
     .thrift-packages-container {
@@ -725,18 +1554,23 @@
     }
 
     .thrift-cards-wrapper {
-        padding: 0 1rem 3rem;
-        margin-top: -80px; /* Adjust overlap for mobile */
+        background-color: rgba(91, 127, 164, 1);
+        padding: 0 1rem 1.25rem;
+        margin-top: 0;
     }
 
     .thrift-cards-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        top: 80px; /* Adjust position for mobile */
+        top: 0;
+        margin-top: -9.375rem;
+        margin-bottom: 0;
     }
 
     .thrift-card {
         padding: 1.5rem;
+        width: 100%;
+        height: auto;
     }
 
     .thrift-card-icon {
@@ -750,6 +1584,139 @@
 
     .thrift-card-description {
         font-size: 0.9rem;
+    }
+
+    /* Testimonials Section - Mobile */
+    .testimonials-section {
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    .testimonials-top {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonials-heading {
+        max-width: 100%;
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.2;
+    }
+
+    .testimonials-intro {
+        max-width: 100%;
+        justify-self: start;
+        font-size: 1.125rem;
+        line-height: 1.5;
+        color: #6b778c;
+    }
+
+    .testimonials-grid {
+        display: block;
+        position: relative;
+        padding-bottom: 5rem;
+    }
+
+    .testimonials-image-panel {
+        position: static;
+        height: auto;
+        background: rgba(255, 250, 237, 1);
+        border-radius: 20px 20px 0 0;
+        padding: 1.25rem 1.25rem 0;
+        overflow: visible;
+    }
+
+    .testimonials-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+
+    .testimonials-text-panel {
+        background: rgba(255, 250, 237, 1);
+        border-radius: 0 0 20px 20px;
+        padding: 0 1.25rem 1.5rem;
+        height: auto;
+        display: block;
+    }
+
+    .testimonials-card {
+        background: transparent;
+        border-radius: 0;
+        padding: 0;
+        min-height: 0;
+    }
+
+    .testimonials-stars {
+        margin: 1rem 0 0.8rem;
+    }
+
+    .testimonials-stars .star-filled,
+    .testimonials-stars .star-empty {
+        font-size: 1.45rem;
+    }
+
+    .testimonial-quote {
+        font-size: 1.01rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
+    .testimonial-avatar {
+        display: none;
+    }
+
+    .testimonial-author {
+        margin-top: 0;
+        gap: 0.5rem;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .testimonial-name {
+        font-size: 1.45rem;
+        line-height: 1.2;
+    }
+
+    .testimonial-role {
+        font-size: 1rem;
+        margin-top: 0.15rem;
+    }
+
+    .testimonial-mark {
+        transform: translateY(0);
+    }
+
+    .testimonial-quote-icon {
+        width: 42px;
+        height: 34px;
+    }
+
+    .testimonial-nav {
+        position: absolute;
+        bottom: 0;
+        width: 52px;
+        height: 52px;
+        border: none;
+        box-shadow: none;
+        background: #ffffff;
+    }
+
+    .testimonial-nav-prev {
+        left: calc(50% - 62px);
+        opacity: 0.35;
+        background: transparent;
+    }
+
+    .testimonial-nav-next {
+        left: calc(50% + 10px);
+    }
+
+    .testimonial-nav-icon {
+        width: 26px;
+        height: 26px;
     }
 } 
 
