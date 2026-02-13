@@ -37,8 +37,31 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #faf8f5;
+    background-color: #fafafa;
+    /* border: 1px solid rgba(243, 112, 43, 0.4); */
     transition: padding 0.25s ease, background-color 0.25s ease;
+}
+
+.home-header {
+    background-color: rgba(255, 250, 245, 1);
+    background-image: radial-gradient(ellipse farthest-side at center center, rgba(243, 112, 43, 0.2) 0%, rgba(243, 112, 43, 0.15) 20%, rgba(243, 112, 43, 0.1) 40%, rgba(243, 112, 43, 0.06) 60%, rgba(243, 112, 43, 0.03) 80%, rgba(243, 112, 43, 0.01) 100%);
+    overflow: hidden;
+}
+
+.about-header {
+    background-color: #fafafa;
+}
+
+.contact-header {
+    background-color: white;
+}
+
+.ministry-header {
+    background-color: #fafafa;
+}
+
+.team-header {
+    background-color: white;
 }
 
 .header-container {
@@ -1706,6 +1729,7 @@ footer {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
+    background-color: #fafafa;
 }
 
 .ministry-label {
@@ -1816,6 +1840,11 @@ footer {
     color: #697586;
     margin: 0;
     line-height: 1.5;
+}
+
+/* Ministry page: override about-benefits-section background to white */
+.ministry-page .about-benefits-section {
+    background-color: #ffffff;
 }
 
 /* Ministry hero responsive */
