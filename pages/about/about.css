@@ -77,7 +77,6 @@
 
     .about-container { 
         padding: 40px 15px; 
-        margin-bottom: 40px; 
     }
 }
 
@@ -772,5 +771,522 @@
         right: 0;
         left: auto;
         transform: none;
+    }
+}
+
+/* Benefits Section */
+.about-benefits-section {
+    padding: 80px 50px;
+    background-color: #fafafa;
+}
+
+.benefits-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+   
+}
+
+.benefits-badge {
+    background-color: #FDE2D5;
+    color: #0C3A30;
+    border: 1px solid #F3702B;
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 50px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.benefits-heading {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: #131313;
+    margin: 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.benefits-marquee-track {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.benefits-marquee-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: max-content;
+    animation: benefits-marquee 40s linear infinite;
+}
+
+.benefits-marquee-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes benefits-marquee {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.benefit-item {
+    flex-shrink: 0;
+    background-color: #FFFFFF;
+    width: 446px;
+    height: 89px;
+    border-radius: 100px;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.benefit-icon img {
+    width: 43px;
+    height: 43px;
+    object-fit: contain;
+}
+
+.benefit-icon-green {
+    background-color: #E0FFBB;
+}
+
+.benefit-icon-purple {
+    background-color: #ECE4F9;
+}
+
+.benefit-icon-blue {
+    background-color: #DAEBFF;
+}
+
+.benefit-text {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #131313;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Responsive for Benefits Section */
+@media (max-width: 1024px) {
+    .about-benefits-section {
+        padding: 60px 30px;
+    }
+
+    .benefits-heading {
+        font-size: 36px;
+    }
+
+    .benefits-marquee-content {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 834px) {
+    .about-benefits-section {
+        padding: 50px 25px;
+    }
+
+    .benefits-heading {
+        font-size: 32px;
+    }
+
+    .benefits-marquee-content {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-benefits-section {
+        padding: 50px 20px;
+    }
+
+    .benefits-heading {
+        font-size: 28px;
+    }
+
+    .benefit-item {
+        padding: 0 1.25rem;
+    }
+
+    .benefit-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-benefits-section {
+        padding: 40px 15px;
+    }
+
+    .benefits-container {
+        gap: 1.5rem;
+       
+    }
+
+    .benefits-heading {
+        font-size: 24px;
+    }
+
+    .benefit-item {
+        width: 346px;
+        height: 73px;
+        border-radius: 82px;
+        padding: 0 1rem;
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .benefit-icon {
+        width: 57px;
+        height: 57px;
+    }
+
+    .benefit-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .benefit-text {
+        font-size: 16.47px;
+    }
+    .benefits-badge {
+        margin-bottom: 10px;
+    }
+}
+
+/* Goals & Objectives Container */
+.goals-objectives-container {
+    margin: 0 auto;
+    padding: 80px 0px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+   
+    
+}
+
+.goals-heading {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #51250E;
+    margin: 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.goals-subtitle {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #697586;
+    margin: 0;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 800px;
+}
+
+.goals-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.goal-box {
+    height: 390px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 30px;
+    border: 1px solid #5C88B6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.goal-box-1 {
+    background-color: #FFFAED;
+}
+
+.goal-box-2 {
+    background-color: #E2EDF8;
+}
+
+.goal-box-3 {
+    background-color: #FFFAED;
+}
+
+.goal-box-4 {
+    background-color: #E2EDF8;
+}
+
+.goal-box-5 {
+    background-color: #FFFAED;
+}
+
+.goal-box-6 {
+    background-color: #E2EDF8;
+}
+
+.goal-image-wrapper {
+    width: 344px;
+    height: 310px;
+    overflow: hidden;
+    border-radius: 12px;
+    flex-shrink: 0;
+    object-position: top;
+}
+
+.goal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.goal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 445px;
+    flex-shrink: 0;
+}
+
+.goal-title {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #51250E;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.goal-text {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #697586;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive for Goals & Objectives */
+@media (max-width: 1024px) {
+    .goals-objectives-container {
+        padding: 60px 30px 0;
+        gap: 2.5rem;
+    }
+
+    .goals-heading {
+        font-size: 1.8rem;
+    }
+
+    .goals-subtitle {
+        font-size: 17px;
+    }
+
+    .goal-box {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 350px;
+        padding: 1.75rem;
+    }
+
+    .goal-image-wrapper {
+        width: 300px;
+        height: 280px;
+    }
+
+    .goal-title {
+        font-size: 1.75rem;
+    }
+
+    .goal-text {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 834px) {
+    .goals-objectives-container {
+        padding: 50px 25px 0;
+        gap: 2rem;
+    }
+
+    .goals-heading {
+        font-size: 1.7rem;
+    }
+
+    .goals-subtitle {
+        font-size: 16px;
+    }
+
+    .goal-box {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column !important;
+        height: auto;
+        min-height: auto;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .goal-image-wrapper {
+        width: 100%;
+        height: 250px;
+    }
+
+    .goal-content {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .goal-title {
+        font-size: 1.6rem;
+    }
+
+    .goal-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .goals-objectives-container {
+        padding: 50px 20px 0;
+        gap: 1.5rem;
+    }
+
+    .goals-heading {
+        font-size: 1.6rem;
+    }
+
+    .goals-subtitle {
+        font-size: 16px;
+    }
+
+    .goal-box {
+        width: 100%;
+        max-width: 100%;
+        height: 560px;
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .goal-box-2,
+    .goal-box-4,
+    .goal-box-6 {
+        flex-direction: column-reverse !important;
+    }
+
+    .goal-image-wrapper {
+        width: 100%;
+        height: 300px;
+    }
+
+    .goal-content {
+        justify-content: center;
+        gap: 0.75rem;
+  
+    }
+
+    .goal-title {
+        font-size: 1.6rem;
+    }
+
+    .goal-text {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .goals-objectives-container {
+        padding: 40px 15px 0;
+        gap: 1.25rem;
+    }
+
+    .goals-heading {
+        font-size: 1.5rem;
+    }
+
+    .goals-subtitle {
+        font-size: 16px;
+    }
+
+    .goal-box {
+        width: 100%;
+        max-width: 100%;
+        height: 460px;
+        border-radius: 20px;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .goal-box-2,
+    .goal-box-4,
+    .goal-box-6 {
+        flex-direction: column-reverse !important;
+    }
+
+    .goal-image-wrapper {
+        width: 100%;
+        height: 246px;
+        border-radius: 8px;
+    }
+
+    .goal-content {
+        width: 100%;
+        justify-content: center;
+        gap: 0.85rem;
+        min-height: 150px;
+        /* border: 1px solid red; */
+    }
+
+    .goal-title {
+        font-size: 24px;
+    }
+
+    .goal-text {
+        font-size: 16px;
+        line-height: 1.4;
     }
 }
