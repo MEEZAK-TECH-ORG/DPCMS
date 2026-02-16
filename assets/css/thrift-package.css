@@ -1,0 +1,462 @@
+.thrift-main {
+    padding: 2rem 50px 4rem;
+}
+
+.thrift-page--daily {
+    --thrift-accent: #e67c3d;
+    --thrift-tip-border: #86b2e1;
+}
+
+.thrift-page--trimester {
+    --thrift-accent: #83B380;
+    --thrift-tip-border: #86b2e1;
+}
+
+.thrift-page--semestral {
+    --thrift-accent: #6EA3DB;
+    --thrift-tip-border: #86B2E1;
+}
+
+.thrift-page--premium {
+    --thrift-accent: #DAA241;
+    --thrift-tip-border: #86b2e1;
+}
+
+.thrift-breadcrumb-bar {
+    background: rgba(242, 242, 242, 1);
+    padding: 25px 20px;
+
+}
+
+.thrift-breadcrumb-wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.thrift-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2.25rem;
+}
+
+
+.thrift-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.55rem;
+    color: #6b778c;
+    font-size: 0.95rem;
+}
+
+.thrift-breadcrumb a {
+    color: #6b778c;
+    text-decoration: none;
+}
+
+.thrift-breadcrumb a:hover {
+    color: #f3702b;
+}
+
+.thrift-breadcrumb .current {
+  color: rgba(46, 10, 11, 1);
+    font-weight: 600;
+    font-size: 18px;
+   
+}
+
+.thrift-hero {
+    border-radius: 16px;
+    color: #fff;
+    padding:60px 40px;
+    box-shadow: 0 10px 24px rgba(5, 24, 43, 0.12);
+}
+
+.thrift-hero-inner h1{
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.thrift-hero-inner p{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+.thrift-hero-inner .thrift-hero-value{
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    font-weight: extrabold;
+}
+
+.thrift-hero-inner .thrift-hero-label{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.thrift-hero-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.thrift-page--daily .thrift-hero {
+  
+    background-image: url("/assets/images/daily-hero-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.thrift-page--trimester .thrift-hero {
+ 
+    background-image: url("/assets/images/trimester-hero-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.thrift-page--semestral .thrift-hero {
+ 
+    background-image: url("/assets/images/semestral-hero-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.thrift-page--premium .thrift-hero {
+
+    background-image: url("/assets/images/premium-hero-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.thrift-hero h1 {
+    margin: 0 0 0.65rem;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.1;
+}
+
+.thrift-hero p {
+    margin: 0;
+    max-width: 720px;
+    line-height: 1.65;
+    font-size: 1.02rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.thrift-hero-metrics {
+    margin-top: 1.6rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.thrift-hero-metric {
+    text-align: center;
+}
+
+.thrift-hero-value {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.thrift-hero-label {
+    margin: 0.3rem 0 0;
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+.thrift-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 1.5rem;
+   
+}
+
+.thrift-block h2 {
+    margin-bottom: 10px;
+    font-size: 48px;
+    color: #51250E;
+    font-weight: 800;
+}
+
+.thrift-block-subtitle {
+    margin-bottom: 30px;
+    color: #697586;
+    line-height: 1.6;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.thrift-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.thrift-feature {
+    border: 1px solid #CFE0F3;
+    border-radius: 12px;
+    padding: 24px 32px;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.thrift-feature-number {
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+    gap: 10px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-bottom: 0.65rem;
+    background: var(--thrift-accent, #e67c3d);
+    color: #ffffff;
+}
+
+.thrift-feature h3 {
+    margin: 0 0 0.4rem;
+    font-size: 24px;
+    color: #51250E;
+    line-height: 32px;
+}
+
+.thrift-feature p {
+    margin: 0;
+    color: #4B5565;
+    line-height: 25px;
+    font-size: 16px;
+}
+
+.thrift-page .thrift-feature:hover {
+    background: var(--thrift-accent, #e67c3d);
+    border-color: var(--thrift-accent, #e67c3d);
+}
+
+.thrift-page .thrift-feature:hover h3,
+.thrift-page .thrift-feature:hover p {
+    color: #ffffff;
+}
+
+.thrift-page .thrift-feature:hover .thrift-feature-number {
+    background: #ffffff;
+    color: var(--thrift-accent, #e67c3d);
+}
+
+.thrift-savings-tips {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.thrift-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.thrift-tip-card {
+    border: 1px solid #e2e8f0;
+    border-left: 7px solid  #86b2e1;
+    border-radius: 14px;
+    padding: 60px 40px;
+    background: #ffffff;
+}
+
+.thrift-savings-tips h2{
+    font-size: 48px;
+    font-weight: 800;
+    color: #51250E;
+    line-height: 32px;
+  font-weight: extrabold;
+  margin-bottom: 30px;
+}
+.thrift-tips-grid h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #51250E;
+    line-height: 32px;
+}
+
+.thrift-tips-grid p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #697586;
+    line-height: 28px;
+}
+
+.thrift-tip-card p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #697586;
+    line-height: 28px;
+}
+
+.thrift-journey {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.thrift-stage {
+    border: 1px solid #e7ecf3;
+    border-radius: 12px;
+    padding: 1rem;
+    background: #fbfdff;
+}
+
+.thrift-stage h4 {
+    margin: 0 0 0.45rem;
+    color: #223246;
+    font-size: 1rem;
+}
+
+.thrift-stage p {
+    margin: 0;
+    color: #617286;
+    line-height: 1.5;
+}
+
+.thrift-cta {
+    border-radius: 16px;
+    background-image: url("/assets/images/thrift-footer-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    max-width: 1060px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 52px 120px;
+    text-align: center;
+}
+
+
+.thrift-cta h3 {
+    margin: 0 0 0.4rem;
+    color: #47391f;
+}
+
+.thrift-cta p {
+    margin: 0 0 1rem;
+    color: #7a6f54;
+}
+
+.thrift-cta .cta-button {
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.thrift-cta .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 1023px) {
+    .thrift-breadcrumb-bar {
+        padding: 0.95rem 1.5rem;
+    }
+
+    .thrift-main {
+        padding: 1.5rem 1.5rem 3rem;
+    }
+
+    .thrift-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .thrift-tips-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .thrift-hero-metrics {
+        gap: 0.6rem;
+    }
+
+    .thrift-cta {
+        max-width: 100%;
+        padding: 2rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .thrift-breadcrumb-bar {
+        padding: 0.85rem 1rem;
+    }
+
+    .thrift-main {
+        padding: 1rem 1rem 2.25rem;
+    }
+
+    .thrift-container {
+        gap: 1.2rem;
+    }
+
+    .thrift-hero {
+        padding: 1.25rem 1rem;
+    }
+
+    .thrift-hero h1 {
+        font-size: 1.65rem;
+    }
+
+    .thrift-hero p {
+        font-size: 0.95rem;
+    }
+
+    .thrift-hero-metrics {
+        grid-template-columns: 1fr;
+        margin-top: 1.1rem;
+        gap: 0.8rem;
+    }
+
+    .thrift-hero-value {
+        font-size: 1.7rem;
+    }
+
+    .thrift-hero-label {
+        font-size: 0.88rem;
+    }
+
+    .thrift-block {
+        padding: 1rem;
+    }
+
+    .thrift-feature h3 {
+        font-size: 1.35rem;
+    }
+
+    .thrift-feature p {
+        font-size: 1rem;
+    }
+
+    .thrift-features,
+    .thrift-journey,
+    .thrift-tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .thrift-cta {
+        padding: 1.25rem 1rem;
+    }
+}
