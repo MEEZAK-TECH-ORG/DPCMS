@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About us page">
-    <title>About - DPCMS</title>
+    <meta name="description" content="Frequently Asked Questions - DPCMS">
+    <title>FAQ - DPCMS</title>
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/faq.css">
 </head>
 <body>
     <header>
@@ -20,7 +21,7 @@
             <nav class="header-nav">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/pages/about/" class="active">About Us</a></li>
+                    <li><a href="/pages/about/">About Us</a></li>
                     <li><a href="/pages/team/">Our Team</a></li>
                     <li><a href="/pages/ministry/">Our Ministry</a></li>
                     <li><a href="/pages/contact/">Contact us</a></li>
@@ -52,7 +53,7 @@
             </div>
             <nav class="sidebar-nav">
                 <a href="/">Home</a>
-                <a href="/pages/about/" class="active">About us</a>
+                <a href="/pages/about/">About us</a>
                 <a href="/pages/team/">Our Team</a>
                 <a href="/pages/ministry/">Our Ministry</a>
                 <a href="/pages/contact/">Contact us</a>
@@ -64,9 +65,125 @@
         </div>
     </div>
 
-    <main>
-        <h1>About Us</h1>
-        <p>This is the about page.</p>
+    <main class="faq-page">
+        <div class="faq-container">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">></span>
+                <span class="breadcrumb-current">FAQS</span>
+            </nav>
+
+            <section class="faq-hero">
+                <span class="faq-label">FAQS</span>
+                <h1 class="faq-heading">Frequently asked questions</h1>
+                <p class="faq-subtext">If you have any questions feel free to get in touch with us via phone, text, email, the form below</p>
+            </section>
+
+            <section class="faq-accordion">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>What is Destiny Promoters Cooperative all about?</h3>
+                        <span class="faq-icon faq-icon-plus">+</span>
+                        <span class="faq-icon faq-icon-minus">−</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Destiny Promoters Cooperative is a christian non-governmental empowerment organization, an affiliates of Destiny Promoters evangelical outreach. Saddled with the responsibilities of empowering individuals and communities to break free from the life of poverty and dependence, and to have access to financial stability, abundant food, safe and comfortable housing, high quality education and skills training for self-growth and development.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is Destiny Promoters Cooperative a financial institution?</h3>
+                        <span class="faq-icon faq-icon-plus">+</span>
+                        <span class="faq-icon faq-icon-minus">−</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, Destiny Promoters Cooperative is not a financial institution. We are a registered cooperative society focused on empowerment and community support through collaborative savings.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does the cooperative work?</h3>
+                        <span class="faq-icon faq-icon-plus">+</span>
+                        <span class="faq-icon faq-icon-minus">−</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Members contribute weekly savings over a chosen period (13, 25, or 50 weeks). After completing their savings cycle, members receive empowerment funds and foodstuff incentives to strengthen their livelihoods.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do i join?</h3>
+                        <span class="faq-icon faq-icon-plus">+</span>
+                        <span class="faq-icon faq-icon-minus">−</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To become a member, you need to pay a non-refundable empowerment registration fee of three thousand naira (N2,000.00). After registration, you can choose a savings plan and start contributing weekly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is the highest number of registered accounts per member?</h3>
+                        <span class="faq-icon faq-icon-plus">+</span>
+                        <span class="faq-icon faq-icon-minus">−</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Members can register multiple accounts based on their capacity and chosen savings plans. Please contact us for specific details regarding account limits.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I contact the cooperative for inquiry or resolve issues?</h3>
+                        <span class="faq-icon faq-icon-plus">+</span>
+                        <span class="faq-icon faq-icon-minus">−</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can contact us via phone, text, email, or through the contact form on our website. Our contact details are available on the Contact Us page.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I be a partner/sponsor for the empowerment or kingdom initiatives programmes?</h3>
+                        <span class="faq-icon faq-icon-plus">+</span>
+                        <span class="faq-icon faq-icon-minus">−</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We welcome partners and sponsors who share our vision of empowering individuals and communities. Please contact us through our Contact Us page or email us directly to discuss partnership opportunities.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="join-promo" id="join-promo">
+            <div class="join-promo-inner">
+                <div class="join-promo-images join-promo-images-left">
+                    <div class="join-promo-img-wrap join-promo-img-1">
+                        <img src="/assets/images/rectangle1.svg" alt="Member with package" class="join-promo-img" />
+                    </div>
+                    <div class="join-promo-img-wrap join-promo-img-4">
+                        <img src="/assets/images/rectangle2.svg" alt="Destiny Promoters Cooperative group" class="join-promo-img" />
+                    </div>
+                </div>
+                <div class="join-promo-cta">
+                    <h2 class="join-promo-heading">Join us today and get empowered, Grow your finances and improve stable livelihood</h2>
+                    <p class="join-promo-subtext">500K + Active users enjoying the benefits</p>
+                    <a href="/pages/register/" class="join-promo-btn">Get started now</a>
+                </div>
+                <div class="join-promo-images join-promo-images-right">
+                    <div class="join-promo-img-wrap join-promo-img-2">
+                        <img src="/assets/images/new.jpg" alt="Member with check" class="join-promo-img" />
+                    </div>
+                    <div class="join-promo-img-wrap join-promo-img-3">
+                        <img src="/assets/images/rectangle4.svg" alt="Member with check" class="join-promo-img" />
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -166,5 +283,6 @@
     </footer>
 
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/faq.js"></script>
 </body>
 </html>
