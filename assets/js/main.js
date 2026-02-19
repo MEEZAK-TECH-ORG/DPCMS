@@ -176,6 +176,40 @@ document.addEventListener('DOMContentLoaded', function() {
         renderTestimonial(currentTestimonial);
     }
 
+    // Thrift package (mobile): reveal remaining "How it works" cards
+    var howItWorksSections = document.querySelectorAll('.thrift-how-it-works');
+    if (howItWorksSections.length) {
+        function syncHowItWorksToggleForViewport() {
+            var isMobile = window.innerWidth <= 768;
+            howItWorksSections.forEach(function(section) {
+                var button = section.querySelector('.thrift-features-toggle');
+                if (!button) return;
+                if (!isMobile) {
+                    section.classList.add('is-expanded');
+                    button.setAttribute('aria-expanded', 'true');
+                    button.textContent = 'See Less';
+                } else {
+                    section.classList.remove('is-expanded');
+                    button.setAttribute('aria-expanded', 'false');
+                    button.textContent = 'See More';
+                }
+            });
+        }
+
+        howItWorksSections.forEach(function(section) {
+            var button = section.querySelector('.thrift-features-toggle');
+            if (!button) return;
+            button.addEventListener('click', function() {
+                var expanded = section.classList.toggle('is-expanded');
+                button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+                button.textContent = expanded ? 'See Less' : 'See More';
+            });
+        });
+
+        syncHowItWorksToggleForViewport();
+        window.addEventListener('resize', syncHowItWorksToggleForViewport);
+    }
+
     console.log('Website loaded successfully');
 
     // Join promo: start float animation when section is in view
