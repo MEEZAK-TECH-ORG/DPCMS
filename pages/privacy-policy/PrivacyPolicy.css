@@ -1,0 +1,210 @@
+/* =========================
+   PrivacyPolicy.css (page-specific)
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #FFFFFF;
+}
+
+/* Override main constraint for privacy policy page */
+main {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.policy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.policy-badge {
+    height: 45px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 1px solid #F7A072;
+    background: #FFFAED;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: #CA5D24;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: fit-content;
+}
+
+.policy-heading {
+    margin-top: 40px;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: #51250E;
+    text-align: center;
+}
+
+.policy-subtitle {
+    margin-top: 24px;
+    max-width: 600px;
+
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #697586;
+}
+
+/* Policy Content Section */
+.policy-content-section {
+    width: 100%;
+    padding: 0 20px 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.policy-content-container {
+    width: 100%;
+    max-width: 1112px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 20px;
+    border: 1px solid #CDD5DF;
+    padding: 40px;
+    background: #FFFFFF;
+    opacity: 1;
+}
+
+.policy-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.policy-section-header {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #51250E;
+    margin: 0;
+}
+
+.policy-section-text {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: #697586;
+    margin: 0;
+    vertical-align: middle;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.policy-email-link {
+    color: #697586;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.policy-email-link:hover {
+    color: #F3702B;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .policy-content-container {
+        max-width: 100%;
+        padding: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .policy-heading {
+        font-size: 40px;
+    }
+
+    .policy-subtitle {
+        font-size: 15px;
+        line-height: 23px;
+    }
+
+    .policy-content-container {
+        padding: 32px 24px;
+        gap: 28px;
+    }
+
+    .policy-section-header {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .policy-section-text {
+        font-size: 15px;
+        line-height: 23px;
+    }
+}
+
+@media (max-width: 480px) {
+    .policy-container {
+        padding: 40px 15px;
+        margin-bottom: 40px;
+    }
+
+    .policy-heading {
+        font-size: 36px;
+    }
+
+    .policy-subtitle {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .policy-content-section {
+        padding: 0 15px 50px 15px;
+    }
+
+    .policy-content-container {
+        padding: 24px 20px;
+        gap: 24px;
+        border-radius: 16px;
+    }
+
+    .policy-section-header {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .policy-section-text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
