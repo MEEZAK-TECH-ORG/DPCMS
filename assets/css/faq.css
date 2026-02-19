@@ -46,6 +46,8 @@ main.faq-page {
 .breadcrumb-current {
     color: #1a1a1a;
     font-weight: 600;
+    font-size: semibold;
+    font-size: 18px;
 }
 
 /* FAQ Hero Section */
