@@ -693,6 +693,7 @@ footer {
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
+        background-color: transparent;
         gap: 2rem;
         padding: 0 !important;
         margin: 0 !important;
