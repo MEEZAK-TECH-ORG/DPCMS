@@ -395,6 +395,7 @@ main {
     position: relative;
     width: 100%;
     min-height: 800px;
+    height: auto;
     background: #FFFAED;
     display: flex;
     align-items: center;
@@ -412,6 +413,8 @@ main {
     max-width: 900px;
     text-align: center;
     padding: 0 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 /* CTA typography & images preserved */
@@ -465,9 +468,10 @@ main {
     border-radius: 25px;
     opacity: 1;
     object-fit: cover;
+    animation: floatUpDown 3s ease-in-out infinite;
 }
 
-/* Animation for mobile - subtle up-down movement */
+/* Animation for all views - subtle up-down movement */
 @keyframes floatUpDown {
     0%, 100% {
         transform: translateY(0);
@@ -526,19 +530,27 @@ main {
 }
 
 @media (max-width: 1024px) {
-    .cta-section { min-height: 900px; }
+    .cta-section { min-height: 700px; }
     .image-1 { top: 20px; }
     .image-2 { top: 20px; }
-    .image-3 { bottom: 120px; }
-    .image-4 { bottom: 100px; }
+    .image-3 { bottom: 20px; }
+    .image-4 { bottom: 20px; }
+    .cta-content {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
 }
 
 @media (max-width: 900px) {
-    .cta-section { min-height: 950px; }
+    .cta-section { min-height: 650px; }
     .image-1 { top: 15px; width: 190px; height: 185px; }
     .image-2 { top: 15px; width: 190px; height: 140px; }
-    .image-3 { bottom: 100px; width: 160px; height: 160px; }
-    .image-4 { bottom: 90px; width: 170px; height: 174px; }
+    .image-3 { bottom: 15px; width: 160px; height: 160px; }
+    .image-4 { bottom: 15px; width: 170px; height: 174px; }
+    .cta-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -549,14 +561,18 @@ main {
     .contact-section { padding: 60px 15px; }
     .map-section { padding: 60px 15px; }
 
-    .cta-section { min-height: 1000px; }
-    .cta-heading { font-size: 32px; }
-    .cta-subheading { font-size: 16px; line-height: 24px; }
+    .cta-section { min-height: 600px; }
+    .cta-heading { font-size: 32px; margin-bottom: 16px; }
+    .cta-subheading { font-size: 16px; line-height: 24px; margin-bottom: 24px; }
 
-    .image-1 { top: 20px; width: 170px; height: 165px; }
-    .image-2 { top: 20px; width: 170px; height: 125px; }
-    .image-3 { bottom: 80px; width: 145px; height: 145px; }
-    .image-4 { bottom: 70px; width: 150px; height: 154px; }
+    .image-1 { top: 15px; width: 170px; height: 165px; }
+    .image-2 { top: 15px; width: 170px; height: 125px; }
+    .image-3 { bottom: 15px; width: 145px; height: 145px; }
+    .image-4 { bottom: 15px; width: 150px; height: 154px; }
+    .cta-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width: 660px) {
@@ -585,7 +601,6 @@ main {
 
     .cta-image { 
         display: block;
-        animation: floatUpDown 3s ease-in-out infinite;
     }
     .image-1 { width: 120px; height: 115px; top: 15px; left: 15px; }
     .image-2 { width: 120px; height: 90px; top: 15px; right: 15px; }
@@ -594,6 +609,7 @@ main {
 
     .cta-content { 
         padding: 0 10px;
-        margin-top: -10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
