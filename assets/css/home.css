@@ -69,7 +69,7 @@ main {
 /* Cards Section */
 .cards-section {
     padding: 4rem 50px;
-  
+    background-color: rgba(255, 250, 245, 1);
 }
 
 .cards-container {
@@ -699,17 +699,17 @@ main {
 }
 
 /* Prevent page-wide horizontal overflow on medium desktop widths */
-@media (max-width: 980px) {
+@media (max-width: 1024px) {
     .cards-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        justify-items: center;
+        justify-items: stretch;
     }
 
     .left-column,
     .right-column {
         width: 100%;
-        max-width: 658px;
+        max-width: 100%;
     }
 
     .large-image-card {
@@ -1003,7 +1003,7 @@ main {
 }
 
 /* Responsive Design */
-@media (min-width: 769px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .hero {
         min-height: auto;
         height: auto;
@@ -1032,22 +1032,27 @@ main {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: 1.5rem;
-        justify-items: center;
+        justify-items: stretch;
     }
 
     .left-column,
     .right-column {
         width: 100%;
-        max-width: 760px;
+        max-width: 100%;
     }
 
     .image-wrapper {
+        flex-direction: row;
         gap: 1rem;
+        width: 100%;
+        justify-content: flex-start;
     }
 
     .image-card {
+        width: calc(50% - 0.5rem);
         max-width: none;
         height: auto;
+        flex: 1;
     }
 
     .info-card {
@@ -1216,7 +1221,7 @@ main {
     }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     .hero,
     .cards-section,
     .who-we-are-section,
@@ -1233,7 +1238,7 @@ main {
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
     .thrift-cards-grid {
         grid-template-columns: repeat(4, 1fr); /* Four cards in a row on desktop */
     }

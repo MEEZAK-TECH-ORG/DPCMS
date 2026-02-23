@@ -197,13 +197,23 @@
     text-align: center;
 }
 
+.how-it-works-subtitle {
+    margin-bottom: 70px;
+    color: #697586;
+    line-height: 28px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+
+}
+
 .thrift-block-subtitle {
     margin-bottom: 30px;
     color: #697586;
     line-height: 1.6;
     font-size: 18px;
     font-weight: 500;
-    text-align: center;
+    text-align: left;
 }
 
 .thrift-features {
@@ -265,6 +275,7 @@
     color: #4B5565;
     line-height: 25px;
     font-size: 16px;
+    font-weight: 400;
 }
 
 .thrift-page .thrift-feature:hover {
@@ -291,16 +302,16 @@
 .thrift-tips-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
+    gap: 32px;
     width: 100%;
 }
 
 .thrift-tip-card {
-    border: 1px solid #e2e8f0;
-    border-left: 7px solid  #86b2e1;
+    border-left: 7px solid #86b2e1;
     border-radius: 14px;
     padding: 60px 40px;
     background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .thrift-savings-tips h2{
@@ -310,14 +321,15 @@
     line-height: 32px;
   font-weight: extrabold;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
 }
 .thrift-tips-grid h3 {
     font-size: 24px;
     font-weight: 700;
     color: #51250E;
     line-height: 32px;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 .thrift-tips-grid p {
@@ -333,6 +345,11 @@
     font-weight: 500;
     color: #697586;
     line-height: 28px;
+}
+
+.thrift-tip-card p strong {
+    font-weight: 700;
+    color: #51250E;
 }
 
 .thrift-journey {
@@ -369,15 +386,18 @@
     background-size: cover;
     max-width: 1060px;
     width: 100%;
-    margin: 0 auto;
-    padding: 52px 120px;
+    margin: 50px auto 0;
+    padding: 100px 120px;
     text-align: center;
 }
 
 
 .thrift-cta h3 {
     margin: 0 0 0.4rem;
-    color: #47391f;
+    color:#0D121C;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
 }
 
 .thrift-cta p {
@@ -389,6 +409,7 @@
     margin-top: 0;
     align-items: center;
     justify-content: center;
+
 }
 
 .thrift-cta .btn {
@@ -396,9 +417,11 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    padding: 14px 40px;
+    border-radius: 50px;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     .thrift-breadcrumb-bar {
         padding: 0.95rem 1.5rem;
     }
