@@ -66,7 +66,7 @@ header {
 
 .header-container {
     margin: 0 auto;
-    background-color: #fff;
+     background-color: #fff; 
     border: 1px solid rgba(243, 112, 43, 0.4);
     border-radius: 50px;
     padding: 1rem 1.5rem;
@@ -499,7 +499,7 @@ footer {
 
 .newsletter-btn {
     position: absolute;
-    top: 50%;
+    top:55%;
     right: 12px;
     transform: translateY(-50%);
     width: 204px;
@@ -1198,6 +1198,8 @@ footer {
     margin-bottom: 1rem;
 }
 
+
+
 .connect-card-value {
     font-size: 1rem;
     font-weight: 700;
@@ -1516,8 +1518,8 @@ footer {
     font-style: extrabold   ; 
     max-width: 676px;
     width: 100%;
-    color: #311609;
-    line-height: 100%;
+    color: #51250E;
+    line-height:52px;
     margin: 0 auto 0.75rem;
     text-align: center;
 }
@@ -1562,6 +1564,7 @@ footer {
         justify-content: center;
         align-items: center;
         flex: 1 1 100%;
+        gap: 1rem;
     }
 
     .join-promo-images-left {
@@ -1575,6 +1578,64 @@ footer {
 
     .join-promo-images-right {
         order: 3;
+        align-items: center;
+    }
+
+    /* Reset positioning for tablet screens */
+    .join-promo-img-1,
+    .join-promo-img-2,
+    .join-promo-img-3,
+    .join-promo-img-4 {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .join-promo-img-wrap {
+        width: 200px;
+    }
+    
+}
+
+/* Tablet screens (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .join-promo-images-left,
+    .join-promo-images-right {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.15rem;
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .join-promo-images-right {
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+
+    }
+    .join-promo-img-1 {
+        left: 30px;
+        /* border: 3px solid blue; */
+    }
+
+    .join-promo-img-wrap {
+        width: 180px;
+        flex-shrink: 0;
+    }
+
+    .join-promo-img-1,
+    .join-promo-img-2,
+    .join-promo-img-3,
+    .join-promo-img-4 {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
     }
 }
 
@@ -1834,9 +1895,14 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+.ministry-card-hr{
+    border-top: 0.5px solid #9AA4B2;
+}
+
 .ministry-card-reference {
     font-size: 16px;
     font-weight: 400;
+    padding-top: 1rem;
     font-style: medium;
     color: #697586;
     margin: 0;

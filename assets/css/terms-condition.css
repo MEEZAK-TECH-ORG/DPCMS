@@ -1,7 +1,7 @@
 /* Terms and Conditions page */
 
 .terms-page {
-  background-color: #f5f5f5;
+  background-color: #fafafa;
   min-height: 60vh;
   padding-top: 0;
   margin-top: 0;
@@ -55,7 +55,7 @@
 /* Hero */
 .terms-hero {
   text-align: center;
-  margin: 0 calc(-50vw + 50%) 3rem;
+  margin: 0 calc(-50vw + 50%) 2rem;
   background-color: #fafafa;
   width: 100vw;
   height: 325px;
@@ -91,18 +91,19 @@
 }
 
 .terms-subtitle {
-  max-width: 580px;
+  max-width: 518px;
   font-size: 16px;
   font-weight: 500;
   color: #697586;
   margin: 0 auto;
   line-height: 1.6;
-}
+}                 
 
 /* Content box */
 .terms-content-box {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 20px;
+  border: 1px solid #CDD5DF;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   padding: 2.5rem 3rem;
   max-width: 970px;
