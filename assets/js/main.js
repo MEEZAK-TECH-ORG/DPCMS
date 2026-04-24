@@ -118,12 +118,14 @@ document.addEventListener('DOMContentLoaded', function() {
         var testimonials = [
             {
                 image: './assets/images/testimonial1.jpg',
-                avatar: './assets/images/testimonial-profile1.jpg',
+                avatar: './assets/images/tawa.jpg',
                 stars: 4,
                 quote:
-                    'My name is Mr Emmanuel Williams, a Lagos resident and proud member of Destiny Promoters Cooperative. Having belonged to similar platforms before, what stands out here is their deep respect for people. The food incentives are given with genuine love and compassion. Their monthly fellowship meetings are always uplifting and life-transforming. I encourage families to become part of Destiny Promoters Cooperative.',
-                name: 'Mr Emmanuel Williams',
-                role: 'Business Man'
+                    ` I was introduced to Destiny Promoters Cooperative by my pastor. Since I became a member, a lot has changed for good in both my life and business. I now have a better savings culture, and my zeal to save has increased because of the many benefits I get from the cooperative. Destiny Promoters Cooperative is not like other platforms out there; they are unique because they focus on helping and supporting the lives of their members. 
+
+So for the cooperative, it is not just about contributing to earn more; they want to help you grow in your business, and they have been doing that for me since I joined. God bless our cooperative.`,
+                name: 'Mrs. Adigun Tawakalitu Olushola',
+                role: 'Business Woman'
             },
             {
                 image: './assets/images/testimonial2.jpg',
@@ -176,39 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderTestimonial(currentTestimonial);
     }
 
-    // Thrift package (mobile): reveal remaining "How it works" cards
-    var howItWorksSections = document.querySelectorAll('.thrift-how-it-works');
-    if (howItWorksSections.length) {
-        function syncHowItWorksToggleForViewport() {
-            var isMobile = window.innerWidth <= 768;
-            howItWorksSections.forEach(function(section) {
-                var button = section.querySelector('.thrift-features-toggle');
-                if (!button) return;
-                if (!isMobile) {
-                    section.classList.add('is-expanded');
-                    button.setAttribute('aria-expanded', 'true');
-                    button.textContent = 'See Less';
-                } else {
-                    section.classList.remove('is-expanded');
-                    button.setAttribute('aria-expanded', 'false');
-                    button.textContent = 'See More';
-                }
-            });
-        }
-
-        howItWorksSections.forEach(function(section) {
-            var button = section.querySelector('.thrift-features-toggle');
-            if (!button) return;
-            button.addEventListener('click', function() {
-                var expanded = section.classList.toggle('is-expanded');
-                button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-                button.textContent = expanded ? 'See Less' : 'See More';
-            });
-        });
-
-        syncHowItWorksToggleForViewport();
-        window.addEventListener('resize', syncHowItWorksToggleForViewport);
-    }
+    // Thrift package pages: show all "How it works" cards (no See More toggle)
 
     console.log('Website loaded successfully');
 
@@ -228,5 +198,45 @@ document.addEventListener('DOMContentLoaded', function() {
             { rootMargin: '0px', threshold: 0.2 }
         );
         observer.observe(joinSection);
+    }
+
+    // Home \"Who we are\" video: central play button
+    var whoWeAreSection = document.querySelector('.who-we-are-section');
+    var whoWeAreVideo = whoWeAreSection ? whoWeAreSection.querySelector('.video-iframe') : null;
+    var whoWeArePlayButton = whoWeAreSection ? whoWeAreSection.querySelector('.play-button-overlay') : null;
+    var whoWeAreThumb = whoWeAreSection ? whoWeAreSection.querySelector('.video-thumbnail') : null;
+
+    if (whoWeAreVideo && whoWeArePlayButton && whoWeAreThumb) {
+        function setPlayingState(isPlaying) {
+            if (isPlaying) {
+                whoWeAreThumb.classList.add('is-playing');
+                whoWeAreThumb.classList.remove('is-paused');
+            } else {
+                whoWeAreThumb.classList.add('is-paused');
+                whoWeAreThumb.classList.remove('is-playing');
+            }
+        }
+
+        // Initial state
+        setPlayingState(!whoWeAreVideo.paused);
+
+        whoWeArePlayButton.addEventListener('click', function () {
+            if (whoWeAreVideo.paused) {
+                whoWeAreVideo.play().then(function () {
+                    setPlayingState(true);
+                }).catch(function () { /* ignore play errors */ });
+            } else {
+                whoWeAreVideo.pause();
+                setPlayingState(false);
+            }
+        });
+
+        // Sync state if user uses native controls
+        whoWeAreVideo.addEventListener('play', function () {
+            setPlayingState(true);
+        });
+        whoWeAreVideo.addEventListener('pause', function () {
+            setPlayingState(false);
+        });
     }
 });

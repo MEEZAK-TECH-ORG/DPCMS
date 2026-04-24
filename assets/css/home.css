@@ -13,7 +13,7 @@ main {
     justify-content: center;
     min-height: 60vh;
     height: 60vh;
-    padding: 2rem 50px;
+    padding: 2rem var(--page-gutter);
     position: relative;
     margin: 0;
     width: 100%;
@@ -27,6 +27,10 @@ main {
     width: 100%;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-headline {
@@ -36,6 +40,7 @@ main {
     line-height: 1.2;
     margin-bottom: 2rem;
     text-align: center;
+    max-width: 900px;
 }
 
 .hero-description {
@@ -68,13 +73,14 @@ main {
 
 /* Cards Section */
 .cards-section {
-    padding: 4rem 50px;
+    padding: 4rem var(--page-gutter);
     background-color: rgba(255, 250, 245, 1);
 }
 
 .cards-container {
     max-width: 100%;
     margin: 0 auto;
+    padding-inline: clamp(8px, 1.5vw, 20px);
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-rows: 520px; 
@@ -105,6 +111,8 @@ main {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    padding-inline: clamp(10px, 1.5vw, 18px);
+    box-sizing: border-box;
 }
 
 .right-column {
@@ -301,7 +309,7 @@ main {
 /* Who We Are Section */
 .who-we-are-section {
     background-color: #E8F4F8; 
-    padding: 4rem 50px;
+    padding: 4rem var(--page-gutter);
     width: 100%;
     position: relative;
     margin: 0;
@@ -391,6 +399,8 @@ main {
     height: 100%;
     border: none;
     display: block;
+    object-fit: contain;
+    background-color: #000;
 }
 
 .play-button-overlay {
@@ -401,21 +411,63 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    pointer-events: none;
-    transition: transform 0.3s ease;
-}
-
-.video-thumbnail:hover .play-button-overlay {
-    transform: translate(-50%, -50%) scale(1.1);
+    pointer-events: auto;
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
 .play-button-overlay svg circle {
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
 }
 
+/* State: video paused (initial) */
+.video-thumbnail.is-paused .play-button-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.video-thumbnail.is-paused .play-button-overlay:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-thumbnail.is-paused .play-icon {
+    display: block;
+}
+
+.video-thumbnail.is-paused .pause-icon {
+    display: none;
+}
+
+/* State: video playing */
+.video-thumbnail.is-playing .play-button-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.video-thumbnail.is-playing:hover .play-button-overlay {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.video-thumbnail.is-playing .play-icon {
+    display: none;
+}
+
+.video-thumbnail.is-playing .pause-icon {
+    display: none;
+}
+
+.video-thumbnail.is-playing:hover .pause-icon {
+    display: block;
+}
+
 /* How It Works Section */
 .how-it-works-section {
-    padding: 5rem 50px;
+    padding: 5rem var(--page-gutter);
     background-color: #fff;
     width: 100%;
     margin-bottom: 100px;
@@ -634,7 +686,7 @@ main {
 
 .thrift-packages-header {
     background-color:rgba(91, 127, 164, 1);
-    padding: 4rem 50px calc(2rem + 9.375rem) 50px;
+    padding: 4rem var(--page-gutter) calc(2rem + 9.375rem);
     width: 100%;
     display: flex;
     align-items: center;
@@ -656,7 +708,7 @@ main {
 
 .thrift-cards-wrapper {
     background-color: #F4F7F9; 
-    padding: 0 50px 4rem;
+    padding: 0 var(--page-gutter) 4rem;
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -818,7 +870,7 @@ main {
 /* Testimonials Section */
 .testimonials-section {
     background-color: #f3f5f7;
-    padding: 5rem 50px;
+    padding: 5rem var(--page-gutter);
     --testimonial-panel-height: 550px;
 }
 
@@ -1046,6 +1098,7 @@ main {
         gap: 1rem;
         width: 100%;
         justify-content: flex-start;
+        padding-inline: clamp(10px, 2vw, 16px);
     }
 
     .image-card {
@@ -1146,7 +1199,7 @@ main {
     }
 
     .thrift-packages-header {
-        padding: 3.5rem 1.5rem calc(2rem + 7rem) 1.5rem;
+        padding: 3.5rem var(--page-gutter) calc(2rem + 7rem);
     }
 
     .thrift-packages-heading {
@@ -1158,7 +1211,7 @@ main {
     }
 
     .thrift-cards-wrapper {
-        padding: 0 1.5rem 3rem;
+        padding: 0 var(--page-gutter) 3rem;
     }
 
     .thrift-cards-grid {
@@ -1227,14 +1280,14 @@ main {
     .who-we-are-section,
     .how-it-works-section,
     .testimonials-section {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
     }
 
     .thrift-packages-header,
     .thrift-cards-wrapper {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
     }
 }
 
@@ -1244,12 +1297,69 @@ main {
     }
 }
 
+@media (max-width: 1280px) and (min-width: 1025px) {
+    .cards-container {
+        padding-inline: 16px;
+    }
+
+    .left-column,
+    .image-wrapper {
+        min-width: 0;
+    }
+
+    .image-wrapper {
+        gap: 1rem;
+        padding-inline: 16px;
+    }
+
+    .image-card {
+        width: calc(50% - 0.5rem);
+        max-width: none;
+        min-width: 0;
+    }
+
+    .how-it-works-content {
+        max-width: 100%;
+        min-height: 560px;
+    }
+
+    .how-it-works-image {
+        width: min(100%, 560px);
+    }
+
+    .card-1 {
+        left: 0;
+    }
+
+    .card-2 {
+        right: 0;
+    }
+
+    .card-3 {
+        right: 0;
+        bottom: -4%;
+    }
+
+    .card-4 {
+        left: 0;
+        bottom: -10%;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Section headings - consistent mobile sizing */
+    .who-we-are-heading,
+    .how-it-works-heading,
+    .thrift-packages-heading {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
     /* Hero section - subtle gradient and heading fixes */
     .hero {
         margin: 0;
         width: 100%;
-        padding: 3rem 1.5rem;
+        padding: 3rem var(--page-gutter);
         background-color: rgba(255, 250, 245, 1);
         background-image: radial-gradient(ellipse farthest-side at center center, rgba(243, 112, 43, 0.03) 0%, rgba(243, 112, 43, 0.02) 30%, rgba(243, 112, 43, 0.01) 60%, transparent 100%);
     }
@@ -1275,11 +1385,12 @@ main {
     .cta-button {
         padding: 1rem 2.5rem;
         font-size: 1rem;
+        margin-top: 0px;
     }
 
     /* Cards section - proper mobile layout */
     .cards-section {
-        padding: 2rem 1rem;
+        padding: 2rem var(--page-gutter);
     }
 
     .cards-container {
@@ -1300,6 +1411,7 @@ main {
         gap: 0.75rem;
         width: 100%;
         justify-content: center;
+        padding-inline: clamp(8px, 3vw, 14px);
     }
 
     .image-card {
@@ -1367,7 +1479,7 @@ main {
     }
 
     .members-text {
-        font-size: clamp(1.95rem, 5vw, 2.35rem);
+        font-size: 14px;
         line-height: 1.05;
     }
 
@@ -1381,7 +1493,7 @@ main {
 
     /* How It Works Section - Mobile */
     .how-it-works-section {
-        padding: 2.5rem 1rem 3rem;
+        padding: 2.5rem var(--page-gutter) 3rem;
         margin-bottom: 0;
     }
 
@@ -1501,7 +1613,7 @@ main {
     }
     /* Who We Are Section - Mobile */
     .who-we-are-section {
-        padding: 3rem 1rem;
+        padding: 3rem var(--page-gutter);
         width: 100%;
         margin: 0;
         overflow-x: hidden;
@@ -1541,7 +1653,7 @@ main {
     }
 
     .thrift-packages-header {
-        padding: 3rem 1rem calc(2rem + 9.375rem) 1rem;
+        padding: 3rem var(--page-gutter) calc(2rem + 9.375rem);
     }
 
     .thrift-packages-container {
@@ -1560,7 +1672,7 @@ main {
 
     .thrift-cards-wrapper {
         background-color: rgba(91, 127, 164, 1);
-        padding: 0 1rem 1.25rem;
+        padding: 0 var(--page-gutter) 1.25rem;
         margin-top: 0;
     }
 
@@ -1599,7 +1711,7 @@ main {
 
     /* Testimonials Section - Mobile */
     .testimonials-section {
-        padding: 1.5rem 1rem 3rem;
+        padding: 1.5rem var(--page-gutter) 3rem;
     }
 
     .testimonials-top {
@@ -1610,7 +1722,7 @@ main {
 
     .testimonials-heading {
         max-width: 100%;
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: 24px;
         line-height: 1.2;
     }
 
@@ -1687,7 +1799,7 @@ main {
     }
 
     .testimonial-name {
-        font-size: 1.45rem;
+        font-size: 1rem;
         line-height: 1.2;
     }
 
@@ -1730,5 +1842,3 @@ main {
         height: 26px;
     }
 } 
-
-

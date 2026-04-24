@@ -263,3 +263,35 @@ body{
   .form-title{font-size:22px}
   .form-subtitle{font-size:13px}
 }
+
+/* Floating WhatsApp button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #F3702B;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(243, 112, 43, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+.floating-whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(243, 112, 43, 0.5);
+}
+.floating-whatsapp:focus {
+  outline: 2px solid #F3702B;
+  outline-offset: 3px;
+}
+.floating-whatsapp img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
