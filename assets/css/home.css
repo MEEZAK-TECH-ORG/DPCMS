@@ -50,6 +50,8 @@ main {
 }
 
 .cta-button {
+    display: inline-block;
+    text-decoration: none;
     background-color: #F3702B;
     color: white;
     border: none;
@@ -286,6 +288,8 @@ main {
 }
 
 .info-card-button {
+    display: inline-block;
+    text-decoration: none;
     background-color: #FFFFFF;
     color: #CA5D24;
     border: none;
