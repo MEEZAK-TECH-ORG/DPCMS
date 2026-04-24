@@ -24,6 +24,10 @@ html {
     font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+:root {
+    --page-gutter: clamp(16px, 4vw, 50px);
+}
+
 body {
     font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
@@ -33,7 +37,7 @@ body {
 
 /* Header & Navigation */
 header {
-    padding: 41px 50px;
+    padding: 41px var(--page-gutter);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -374,23 +378,21 @@ footer {
 
 .footer-top {
     background-color: #fafafa;
-    padding: 80px 50px 0px;
+    padding: 80px var(--page-gutter) 0;
   
 }
 
 .footer-top-inner {
-
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    gap: 3rem;
-    flex-wrap: wrap;
-  
+    gap: clamp(1.25rem, 2vw, 3rem);
+    flex-wrap: nowrap;
 }
 
 .footer-brand {
-    flex: 1;
-    min-width: 280px;
+    flex: 1 1 44%;
+    min-width: 0;
 }
 
 .footer-logo-section {
@@ -460,8 +462,8 @@ footer {
 }
 
 .footer-newsletter {
-    min-width: 320px;
- 
+    flex: 1 1 36%;
+    min-width: 0;
 }
 
 .newsletter-heading {
@@ -469,16 +471,17 @@ footer {
     font-weight: 700;
     color: #222;
     margin: 0 0 1rem 0;
+    
 }
 
 .newsletter-form {
     position: relative;
-    width: 584px;
+    width: min(100%, 584px);
     max-width: 100%;
 }
 
 .newsletter-input {
-    width: 584px;
+    width: 100%;
     max-width: 100%;
     height: 78px;
     padding: 0 220px 0 2.5rem;
@@ -537,33 +540,38 @@ footer {
 
 .footer-main {
     background: #F3702B;
-    padding: 0px 50px;
+    padding: 0 var(--page-gutter);
     
 }
 
-    .footer-main-inner {
- 
+.footer-main-inner {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5rem;
-
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 2.5rem);
     padding-bottom:60px;
-    
 }
 
-    .footer-pages {
-    width: 180px;
+.footer-main-inner > * {
+    min-width: 0;
+}
 
-    }
+.footer-pages {
+    width: auto;
+    max-width: 100%;
+
+}
 
 .footer-links {
-    width: 180px;
+    width: auto;
+    max-width: 100%;
 
-    }
-    .footer-address {
-        width: 320px;
-        }
+}
+
+.footer-address {
+    width: auto;
+    max-width: 100%;
+}
 
 
 
@@ -627,7 +635,7 @@ footer {
     background: #F3702B;
     border-top: 1px solid white;
     color: #fff;
-    padding: 2.5rem 1.5rem;
+    padding: 2.5rem var(--page-gutter);
     text-align: center;
     font-size: 0.875rem;
     display: flex;
@@ -638,7 +646,7 @@ footer {
 .footer-copyright-inner {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     gap: 0.35rem;
@@ -676,8 +684,23 @@ footer {
 /* Laptop only (all pages): header touches top when scrolled; container keeps white + border-radius */
 @media (min-width: 1025px) {
     header.header-scrolled {
-        padding: 0 50px;
+        padding: 0 var(--page-gutter);
         background-color: transparent;
+    }
+
+    .footer-main-inner {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .footer-copyright .copyright-line {
+        white-space: nowrap;
+    }
+
+    .footer-contacts .footer-list li a[href^="mailto:"] {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-all;
+        line-break: anywhere;
     }
 }
 
@@ -711,7 +734,7 @@ footer {
     }
 
     .footer-top {
-        padding: 3rem 1.5rem 0;
+        padding: 3rem var(--page-gutter) 0;
     }
 
     .footer-top-inner {
@@ -732,7 +755,7 @@ footer {
     }
 
     .footer-main {
-        padding: 0 1.5rem;
+        padding: 0 var(--page-gutter);
         margin-top: -1px;
     }
 
@@ -855,7 +878,8 @@ footer {
    
 
     .footer-top {
-        padding: 2rem 1rem 0;
+        padding: 2rem var(--page-gutter) 0;
+        
     }
 }
 
@@ -906,11 +930,11 @@ footer {
 
 @media (max-width: 375px) {
     .footer-top {
-        padding: 1.5rem 1rem 0;
+        padding: 1.5rem var(--page-gutter) 0;
     }
 
     .footer-main {
-        padding: 0 1rem;
+        padding: 0 var(--page-gutter);
         margin-top: -1px;
     }
 
@@ -1551,6 +1575,42 @@ footer {
     transform: translateY(-2px);
 }
 
+/* Keep side images inside gutters on smaller desktop widths (e.g. 1230px) */
+@media (max-width: 1300px) and (min-width: 1025px) {
+    .join-promo {
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+    }
+
+    .join-promo-inner {
+        max-width: 100%;
+        gap: 1.25rem;
+    }
+
+    .join-promo-img-wrap {
+        width: 180px;
+    }
+
+    .join-promo-img-1 {
+        left: -12px;
+    }
+
+    .join-promo-img-2 {
+        left: 12px;
+        bottom: 12px;
+    }
+
+    .join-promo-img-3 {
+        left: -12px;
+        top: 18px;
+    }
+
+    .join-promo-img-4 {
+        right: -12px;
+        top: 18px;
+    }
+}
+
 /* Join promo responsive */
 @media (max-width: 1024px) {
     .join-promo-inner {
@@ -1996,4 +2056,36 @@ footer {
         font-size: 0.75rem;
         flex-shrink: 0;
     }
+}
+
+/* Floating WhatsApp button */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #F3702B;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(243, 112, 43, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+.floating-whatsapp:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(243, 112, 43, 0.5);
+}
+.floating-whatsapp:focus {
+    outline: 2px solid #F3702B;
+    outline-offset: 3px;
+}
+.floating-whatsapp img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
 }

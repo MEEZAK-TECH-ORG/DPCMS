@@ -7,8 +7,18 @@
     --thrift-tip-border: #86b2e1;
 }
 
+.thrift-page--thrift4business {
+    --thrift-accent: #83B380;
+    --thrift-tip-border: #86b2e1;
+}
+
 .thrift-page--trimester {
     --thrift-accent: #83B380;
+    --thrift-tip-border: #86b2e1;
+}
+
+.thrift-page--food-fiesta {
+    --thrift-accent: #F3702B;
     --thrift-tip-border: #86b2e1;
 }
 
@@ -116,6 +126,13 @@
     background-size: cover;
 }
 
+.thrift-page--food-fiesta .thrift-hero {
+    background-image: url("/assets/images/daily-hero-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .thrift-page--trimester .thrift-hero {
  
     background-image: url("/assets/images/trimester-hero-bg.png");
@@ -166,12 +183,7 @@
     text-align: center;
 }
 
-.thrift-hero-value {
-    margin: 0;
-    font-size: clamp(1.8rem, 3.3vw, 2.4rem);
-    font-weight: 700;
-    line-height: 1.1;
-}
+
 
 .thrift-hero-label {
     margin: 0.3rem 0 0;
@@ -221,6 +233,148 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     width: 100%;
+}
+
+/* Food Fiesta: flyer left, features right */
+.thrift-page--food-fiesta .food-fiesta-how-layout {
+    display: flex;
+    gap: 32px;
+    align-items: stretch;
+}
+
+.thrift-page--food-fiesta .food-fiesta-how-flyer {
+    flex: 0 0 42%;
+    max-width: 42%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(5, 24, 43, 0.12);
+    display: flex;
+    background: #ffffff;
+}
+
+.thrift-page--food-fiesta .food-fiesta-how-flyer img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.thrift-page--food-fiesta .thrift-how-it-works .thrift-features {
+    flex: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+    .thrift-page--food-fiesta .food-fiesta-how-layout {
+        flex-direction: column;
+    }
+
+    .thrift-page--food-fiesta .food-fiesta-how-flyer {
+        max-width: 100%;
+        flex-basis: auto;
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 640px) {
+    .thrift-page--food-fiesta .thrift-how-it-works .thrift-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Premium: flyer left, journey cards right */
+.thrift-page--premium .premium-tips-layout {
+    display: flex;
+    gap: 32px;
+    align-items: stretch;
+}
+
+.thrift-page--premium .premium-tips-flyer {
+    flex: 0 0 42%;
+    max-width: 42%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(5, 24, 43, 0.12);
+    display: flex;
+    background: #ffffff;
+}
+
+.thrift-page--premium .premium-tips-flyer img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.thrift-page--premium .premium-tips-layout .thrift-tips-grid {
+    flex: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+    .thrift-page--premium .premium-tips-layout {
+        flex-direction: column;
+    }
+
+    .thrift-page--premium .premium-tips-flyer {
+        max-width: 100%;
+        flex-basis: auto;
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 640px) {
+    .thrift-page--premium .premium-tips-layout .thrift-tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Thrift4Business: flyer left, features right */
+.thrift-page--thrift4business .thrift4business-how-layout {
+    display: flex;
+    gap: 32px;
+    align-items: stretch;
+}
+
+.thrift-page--thrift4business .thrift4business-how-flyer {
+    flex: 0 0 42%;
+    max-width: 42%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(5, 24, 43, 0.12);
+    display: flex;
+    background: #ffffff;
+    
+}
+
+.thrift-page--thrift4business .thrift4business-how-flyer img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.thrift-page--thrift4business .thrift-how-it-works .thrift-features {
+    flex: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+    .thrift-page--thrift4business .thrift4business-how-layout {
+        flex-direction: column;
+    }
+
+    .thrift-page--thrift4business .thrift4business-how-flyer {
+        max-width: 100%;
+        flex-basis: auto;
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 640px) {
+    .thrift-page--thrift4business .thrift-how-it-works .thrift-features {
+        grid-template-columns: 1fr;
+    }
 }
 
 .thrift-features-toggle {
@@ -304,6 +458,16 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px;
     width: 100%;
+    /* border: 1px solid #CFE0F3; */
+}
+
+.thrift-tips-grid img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    border-radius: 16px;
+    object-fit: cover;
 }
 
 .thrift-tip-card {
@@ -422,6 +586,16 @@
 }
 
 @media (max-width: 1024px) {
+    .thrift-block h2 {
+        font-size: 32px;
+        line-height: 1.15;
+    }
+
+    .thrift-savings-tips h2 {
+        font-size: 32px;
+        line-height: 1.15;
+    }
+
     .thrift-breadcrumb-bar {
         padding: 0.95rem 1.5rem;
     }
@@ -449,6 +623,16 @@
 }
 
 @media (max-width: 768px) {
+    .thrift-block h2 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .thrift-savings-tips h2 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
     .thrift-breadcrumb-bar {
         padding: 0.85rem 1rem;
     }
@@ -466,13 +650,21 @@
         border-radius: 14px;
     }
 
+    /* Food Fiesta layout handled by dedicated breakpoints above */
+
     .thrift-page--daily .thrift-hero {
+        background-image: url("/assets/images/daily-hero-bg-mobile.png");
+    }
+
+    .thrift-page--food-fiesta .thrift-hero {
         background-image: url("/assets/images/daily-hero-bg-mobile.png");
     }
 
     .thrift-page--trimester .thrift-hero {
         background-image: url("/assets/images/trimester-hero-bg-mobile.png");
     }
+
+    /* Food Fiesta hero uses daily hero background assets */
 
     .thrift-page--semestral .thrift-hero {
         background-image: url("/assets/images/semestral-hero-bg-mobile.png");
@@ -528,8 +720,8 @@
 
     .thrift-savings-tips h2 {
         text-align: left;
-        font-size: clamp(2.4rem, 9vw, 3.2rem);
-        line-height: 1.05;
+        font-size: 24px;
+        line-height: 1.2;
         margin-bottom: 0.75rem;
     }
 
@@ -610,16 +802,14 @@
       
     }
 
+    /* Always show all "How it works" feature cards on mobile */
     .thrift-how-it-works .thrift-feature:nth-child(n + 4) {
-        display: none;
-    }
-
-    .thrift-how-it-works.is-expanded .thrift-feature:nth-child(n + 4) {
         display: block;
     }
 
+    /* No need for "See More" toggle on mobile */
     .thrift-how-it-works .thrift-features-toggle {
-        display: inline-flex;
+        display: none;
     }
 
     .thrift-how-it-works .thrift-features-toggle:hover {
@@ -636,6 +826,14 @@
   
     .thrift-cta {
         padding: 1.25rem 1rem;
+    }
+    .thrift-cta h3{
+        font-size: 24px;
+        line-height: 1.2;
+    }
+    .thrift-cta p{
+        font-size: 1rem;
+        line-height: 1.2;
     }
 
     .thrift-savings-tips h2{
