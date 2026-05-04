@@ -180,6 +180,17 @@ So for the cooperative, it is not just about contributing to earn more; they wan
 
     // Thrift package pages: show all "How it works" cards (no See More toggle)
 
+    // Keep footer copyright year in sync with the current year.
+    var copyrightLine = document.querySelector('.copyright-line');
+    if (copyrightLine) {
+        var currentYear = new Date().getFullYear().toString();
+        if (/\b\d{4}\b/.test(copyrightLine.textContent)) {
+            copyrightLine.innerHTML = copyrightLine.innerHTML.replace(/\b\d{4}\b/, currentYear);
+        } else {
+            copyrightLine.innerHTML = '<span class="copyright-symbol">©</span> ' + currentYear + '. All Rights Reserved.';
+        }
+    }
+
     console.log('Website loaded successfully');
 
     // Join promo: start float animation when section is in view
