@@ -871,6 +871,158 @@ main {
     transform: translateX(5px);
 }
 
+/* Thrift4Business Section */
+.thrift4business-section {
+    background-color: #F4F7F9;
+    padding: 0 var(--page-gutter) 4rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.thrift4business-banner {
+    position: relative;
+    background: #576839;
+    border-radius: 50px;
+    min-height: 486px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.thrift4business-bg-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Left side – positioned container for floating elements */
+.thrift4business-left {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    min-height: 486px;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+/* Floating cards */
+.thrift4business-float {
+    position: absolute;
+    z-index: 3;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.15));
+}
+
+.thrift4business-float img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.thrift4business-earn {
+    top: 12%;
+    left: 6%;
+    width: 180px;
+}
+
+.thrift4business-wallet {
+    top: 8%;
+    left: 38%;
+    width: 220px;
+}
+
+/* People images */
+.thrift4business-person {
+    position: absolute;
+    z-index: 2;
+    object-fit: contain;
+}
+
+.thrift4business-woman {
+    bottom: 0;
+    left: 2%;
+    height: 85%;
+    width: auto;
+}
+
+.thrift4business-man {
+    bottom: 0;
+    left: 35%;
+    height: 80%;
+    width: auto;
+}
+
+/* Right side – text content */
+.thrift4business-right {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    padding: 3rem 3rem 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.thrift4business-logo {
+    width: auto;
+    height: auto;
+}
+
+.thrift4business-logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.thrift4business-heading {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.thrift4business-description {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.thrift4business-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #F3702B;
+    color: #FFFFFF;
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 0px;
+    padding: 14px 40px;
+    border-radius: 50px;
+    border: 1px solid #FFFFFF;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.thrift4business-btn:hover {
+    background-color: #e0621f;
+    transform: translateY(-2px);
+}
+
 /* Testimonials Section */
 .testimonials-section {
     background-color: #f3f5f7;
@@ -1222,6 +1374,40 @@ main {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         top: -7rem;
+    }
+
+    .thrift4business-section {
+        padding: 0 var(--page-gutter) 3rem;
+    }
+
+    .thrift4business-banner {
+        border-radius: 30px;
+        min-height: 380px;
+    }
+
+    .thrift4business-left {
+        min-height: 380px;
+    }
+
+    .thrift4business-earn {
+        width: 150px;
+    }
+
+    .thrift4business-wallet {
+        width: 180px;
+    }
+
+    .thrift4business-heading {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .thrift4business-description {
+        font-size: 14px;
+    }
+
+    .thrift4business-right {
+        padding: 2rem 2rem 2rem 0.5rem;
     }
 
     .testimonials-section {
@@ -1711,6 +1897,106 @@ main {
 
     .thrift-card-description {
         font-size: 0.9rem;
+    }
+
+    /* Thrift4Business Section - Mobile */
+    .thrift4business-section {
+        padding: 0 var(--page-gutter) 2rem;
+    }
+
+    .thrift4business-banner {
+        flex-direction: column;
+        border-radius: 24px;
+        min-height: auto;
+        padding: 1.5rem 1.5rem 0;
+    }
+
+    /* Floating cards stacked vertically */
+    .thrift4business-left {
+        position: static;
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
+        order: 1;
+        padding-bottom: 1rem;
+    }
+
+    .thrift4business-float {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+
+    .thrift4business-earn {
+        width: 200px;
+        align-self: flex-start;
+    }
+
+    .thrift4business-wallet {
+        width: 260px;
+        align-self: center;
+    }
+
+    /* People pinned to bottom of the banner */
+    .thrift4business-person {
+        position: absolute;
+        z-index: 2;
+    }
+
+    .thrift4business-woman {
+        bottom: 0;
+        left: -3rem;
+        width: 95%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        object-position: bottom left;
+    }
+
+    .thrift4business-man {
+        bottom: 0;
+        right: -3rem;
+        left: auto;
+        width: 85%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        object-position: bottom right;
+    }
+
+    /* Text content centered */
+    .thrift4business-right {
+        width: 100%;
+        padding: 0.5rem 0 0;
+        align-items: center;
+        text-align: center;
+        order: 2;
+        padding-bottom: 400px;
+    }
+
+    .thrift4business-heading {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .thrift4business-description {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .thrift4business-logo img {
+        height: 48px;
+    }
+
+    .thrift4business-btn {
+        padding: 12px 32px;
+        font-size: 15px;
     }
 
     /* Testimonials Section - Mobile */
