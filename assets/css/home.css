@@ -712,7 +712,7 @@ main {
 
 .thrift-cards-wrapper {
     background-color: #F4F7F9; 
-    padding: 0 var(--page-gutter) 4rem;
+    padding: 0 var(--page-gutter) 1.5rem;
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -885,9 +885,10 @@ main {
     border-radius: 50px;
     min-height: 486px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     overflow: hidden;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .thrift4business-bg-pattern {
@@ -905,16 +906,16 @@ main {
 .thrift4business-left {
     position: relative;
     width: 50%;
-    height: 100%;
     min-height: 486px;
+    align-self: stretch;
     flex-shrink: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Floating cards */
 .thrift4business-float {
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.15));
 }
 
@@ -928,33 +929,57 @@ main {
     top: 12%;
     left: 6%;
     width: 180px;
+    animation: thrift4business-bob-a 3.2s ease-in-out infinite;
 }
 
 .thrift4business-wallet {
     top: 8%;
     left: 38%;
     width: 220px;
+    animation: thrift4business-bob-b 3.2s ease-in-out infinite;
+}
+
+@keyframes thrift4business-bob-a {
+    0%,
+    100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes thrift4business-bob-b {
+    0%,
+    100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* People images */
 .thrift4business-person {
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     object-fit: contain;
 }
 
 .thrift4business-woman {
     bottom: 0;
     left: 2%;
-    height: 85%;
+    height: 74%;
     width: auto;
+    max-width: 52%;
 }
 
 .thrift4business-man {
     bottom: 0;
-    left: 35%;
-    height: 80%;
+    left: 24%;
+    height: 70%;
     width: auto;
+    max-width: 50%;
 }
 
 /* Right side – text content */
@@ -966,7 +991,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     gap: 1rem;
+    align-self: stretch;
 }
 
 .thrift4business-logo {
@@ -1367,7 +1394,7 @@ main {
     }
 
     .thrift-cards-wrapper {
-        padding: 0 var(--page-gutter) 3rem;
+        padding: 0 var(--page-gutter) 1.25rem;
     }
 
     .thrift-cards-grid {
@@ -1484,6 +1511,63 @@ main {
 @media (min-width: 1025px) {
     .thrift-cards-grid {
         grid-template-columns: repeat(4, 1fr); /* Four cards in a row on desktop */
+    }
+
+    .thrift4business-banner {
+        height: 486px;
+        min-height: 486px;
+        max-height: 486px;
+    }
+
+    .thrift4business-left {
+        min-height: 486px;
+        height: 486px;
+    }
+
+    .thrift4business-right {
+        padding: 2rem 2.5rem 2rem 1.25rem;
+        gap: 0.75rem;
+        justify-content: center;
+    }
+
+    .thrift4business-logo img {
+        height: 48px;
+    }
+
+    .thrift4business-btn {
+        margin-top: 0.25rem;
+    }
+
+    .thrift4business-earn {
+        width: 210px;
+    }
+
+    .thrift4business-wallet {
+        width: 255px;
+    }
+
+    .thrift4business-person {
+        top: auto;
+        bottom: 0;
+        height: 390px;
+        object-fit: contain;
+        object-position: bottom;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    .thrift4business-woman {
+        left: 28px;
+        width: 362px;
+        max-width: none;
+        height: 390px;
+    }
+
+    .thrift4business-man {
+        left: 248px;
+        width: 362px;
+        max-width: none;
+        height: 390px;
     }
 }
 
@@ -1862,7 +1946,7 @@ main {
 
     .thrift-cards-wrapper {
         background-color: rgba(91, 127, 164, 1);
-        padding: 0 var(--page-gutter) 1.25rem;
+        padding: 0 var(--page-gutter) 1rem;
         margin-top: 0;
     }
 
@@ -1901,17 +1985,28 @@ main {
 
     /* Thrift4Business Section - Mobile */
     .thrift4business-section {
-        padding: 0 var(--page-gutter) 2rem;
+        background: #576839;
+        padding: 0;
+        margin: 0;
+        width: 100%;
     }
 
     .thrift4business-banner {
         flex-direction: column;
-        border-radius: 24px;
+        align-items: stretch;
+        border-radius: 0;
         min-height: auto;
-        padding: 1.5rem 1.5rem 0;
+        padding: 2.5rem 1.5rem 0;
+        width: 100%;
+        overflow: hidden;
     }
 
-    /* Floating cards stacked vertically */
+    .thrift4business-banner::after {
+        content: none;
+        display: none;
+    }
+
+    /* Floating cards stacked vertically with clean spacing */
     .thrift4business-left {
         position: static;
         width: 100%;
@@ -1920,9 +2015,9 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.25rem;
+        gap: 1.75rem;
         order: 1;
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
     }
 
     .thrift4business-float {
@@ -1940,44 +2035,53 @@ main {
 
     .thrift4business-wallet {
         width: 260px;
-        align-self: center;
+        align-self: flex-end;
+        margin-right: 0.5rem;
     }
 
-    /* People pinned to bottom of the banner */
+    /* People pinned to bottom of the banner — big overlay */
     .thrift4business-person {
         position: absolute;
-        z-index: 2;
+        z-index: 5;
+        height: auto;
+        max-width: none;
     }
 
     .thrift4business-woman {
         bottom: 0;
-        left: -3rem;
-        width: 95%;
+        left: -20%;
+        width: 110%;
         height: auto;
+        max-width: none;
         max-height: none;
         object-fit: contain;
         object-position: bottom left;
+        z-index: 5;
     }
 
     .thrift4business-man {
         bottom: 0;
-        right: -3rem;
+        right: -18%;
         left: auto;
-        width: 85%;
+        width: 105%;
         height: auto;
+        max-width: none;
         max-height: none;
         object-fit: contain;
         object-position: bottom right;
+        z-index: 6;
     }
 
-    /* Text content centered */
+    /* Text content centered, spaced cleanly, people sit closer below */
     .thrift4business-right {
         width: 100%;
-        padding: 0.5rem 0 0;
+        padding: 0.25rem 0 0;
         align-items: center;
         text-align: center;
+        gap: 1.25rem;
         order: 2;
-        padding-bottom: 400px;
+        padding-bottom: 320px;
+        z-index: 1;
     }
 
     .thrift4business-heading {
@@ -1997,6 +2101,7 @@ main {
     .thrift4business-btn {
         padding: 12px 32px;
         font-size: 15px;
+        margin-top: 0.25rem;
     }
 
     /* Testimonials Section - Mobile */
