@@ -873,6 +873,7 @@ main {
 
 /* Registration Promo Section */
 .registration-promo-section {
+    display: none;
     background: #FFF5F1;
     padding: 80px var(--page-gutter);
     width: 100%;
