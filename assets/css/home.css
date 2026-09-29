@@ -712,7 +712,7 @@ main {
 
 .thrift-cards-wrapper {
     background-color: #F4F7F9; 
-    padding: 0 var(--page-gutter) 4rem;
+    padding: 0 var(--page-gutter) 1.5rem;
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -869,6 +869,378 @@ main {
 
 .thrift-card-link:hover .arrow {
     transform: translateX(5px);
+}
+
+/* Registration Promo Section */
+.registration-promo-section {
+    display: none;
+    background: #FFF5F1;
+    padding: 80px var(--page-gutter);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.registration-promo-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.registration-promo-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.registration-promo-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 31px;
+    border-radius: 50px;
+    background: #FFFFFF;
+    border: 1px solid #CDD5DF;
+}
+
+.registration-promo-chip-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #F3702B;
+    flex-shrink: 0;
+}
+
+.registration-promo-chip-text {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28.8px;
+    letter-spacing: 0;
+    color: #A24B1D;
+}
+
+.registration-promo-heading {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0;
+    color: #0D121C;
+    margin: 0;
+}
+
+.registration-promo-price {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0;
+    color: #CA5D24;
+    margin: 0;
+}
+
+.registration-promo-description {
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0;
+    color: #4B5565;
+    margin: 0;
+    max-width: 640px;
+}
+
+.registration-promo-list {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.registration-promo-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0;
+    color: #4B5565;
+}
+
+.registration-promo-check {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+}
+
+.registration-promo-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 0.75rem;
+}
+
+.registration-promo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    background: #F3702B;
+    color: #FFFFFF;
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 0;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.registration-promo-btn:hover {
+    background: #e0621f;
+    transform: translateY(-2px);
+}
+
+.registration-promo-dates {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28.8px;
+    letter-spacing: 0;
+    color: #121926;
+    margin: 0;
+}
+
+.registration-promo-media {
+    position: relative;
+    flex-shrink: 0;
+    width: 368px;
+    padding-top: 48px;
+}
+
+.registration-promo-flyer {
+    display: block;
+    width: 368px;
+    height: 552px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 1px solid #CDD5DF;
+    box-shadow: 0px 0px 50px 10px #0000001A;
+}
+
+.registration-promo-badge {
+    position: absolute;
+    top: 12px;
+    left: -40px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15.78px 40.75px;
+    border-radius: 65.73px;
+    background: #F3702B;
+    border: 1.31px solid #CDD5DF;
+    transform: rotate(-8.45deg);
+    transform-origin: center center;
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 21.03px;
+    line-height: 32.87px;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+/* Thrift4Business Section */
+.thrift4business-section {
+    /* display: none; */
+    background-color: #F4F7F9;
+    padding: 0 var(--page-gutter) 4rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.thrift4business-banner {
+    position: relative;
+    background: #576839;
+    border-radius: 50px;
+    min-height: 486px;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.thrift4business-bg-pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Left side – positioned container for floating elements */
+.thrift4business-left {
+    position: relative;
+    width: 50%;
+    min-height: 486px;
+    align-self: stretch;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+/* Floating cards */
+.thrift4business-float {
+    position: absolute;
+    z-index: 1;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.15));
+}
+
+.thrift4business-float img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.thrift4business-earn {
+    top: 12%;
+    left: 6%;
+    width: 180px;
+    animation: thrift4business-bob-a 3.2s ease-in-out infinite;
+}
+
+.thrift4business-wallet {
+    top: 8%;
+    left: 38%;
+    width: 220px;
+    animation: thrift4business-bob-b 3.2s ease-in-out infinite;
+}
+
+@keyframes thrift4business-bob-a {
+    0%,
+    100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes thrift4business-bob-b {
+    0%,
+    100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* People images */
+.thrift4business-person {
+    position: absolute;
+    z-index: 5;
+    object-fit: contain;
+}
+
+.thrift4business-woman {
+    bottom: 0;
+    left: 2%;
+    height: 74%;
+    width: auto;
+    max-width: 52%;
+}
+
+.thrift4business-man {
+    bottom: 0;
+    left: 24%;
+    height: 70%;
+    width: auto;
+    max-width: 50%;
+}
+
+/* Right side – text content */
+.thrift4business-right {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    padding: 3rem 3rem 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    align-self: stretch;
+}
+
+.thrift4business-logo {
+    width: auto;
+    height: auto;
+}
+
+.thrift4business-logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.thrift4business-heading {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.thrift4business-description {
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.thrift4business-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #F3702B;
+    color: #FFFFFF;
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25.6px;
+    letter-spacing: 0px;
+    padding: 14px 40px;
+    border-radius: 50px;
+    border: 1px solid #FFFFFF;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.thrift4business-btn:hover {
+    background-color: #e0621f;
+    transform: translateY(-2px);
 }
 
 /* Testimonials Section */
@@ -1215,13 +1587,77 @@ main {
     }
 
     .thrift-cards-wrapper {
-        padding: 0 var(--page-gutter) 3rem;
+        padding: 0 var(--page-gutter) 1.25rem;
+    }
+
+    .registration-promo-section {
+        padding: 60px var(--page-gutter);
+    }
+
+    .registration-promo-inner {
+        gap: 2rem;
+    }
+
+    .registration-promo-heading {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .registration-promo-media {
+        width: 300px;
+        padding-top: 40px;
+    }
+
+    .registration-promo-flyer {
+        width: 300px;
+        height: 450px;
+    }
+
+    .registration-promo-badge {
+        left: -32px;
+        padding: 12px 28px;
+        font-size: 18px;
+        line-height: 28px;
     }
 
     .thrift-cards-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         top: -7rem;
+    }
+
+    .thrift4business-section {
+        padding: 0 var(--page-gutter) 3rem;
+    }
+
+    .thrift4business-banner {
+        border-radius: 30px;
+        min-height: 380px;
+    }
+
+    .thrift4business-left {
+        min-height: 380px;
+    }
+
+    .thrift4business-earn {
+        width: 150px;
+    }
+
+    .thrift4business-wallet {
+        width: 180px;
+    }
+
+    .thrift4business-heading {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .thrift4business-description {
+        font-size: 14px;
+    }
+
+    .thrift4business-right {
+        padding: 2rem 2rem 2rem 0.5rem;
     }
 
     .testimonials-section {
@@ -1298,6 +1734,63 @@ main {
 @media (min-width: 1025px) {
     .thrift-cards-grid {
         grid-template-columns: repeat(4, 1fr); /* Four cards in a row on desktop */
+    }
+
+    .thrift4business-banner {
+        height: 486px;
+        min-height: 486px;
+        max-height: 486px;
+    }
+
+    .thrift4business-left {
+        min-height: 486px;
+        height: 486px;
+    }
+
+    .thrift4business-right {
+        padding: 2rem 2.5rem 2rem 1.25rem;
+        gap: 0.75rem;
+        justify-content: center;
+    }
+
+    .thrift4business-logo img {
+        height: 48px;
+    }
+
+    .thrift4business-btn {
+        margin-top: 0.25rem;
+    }
+
+    .thrift4business-earn {
+        width: 210px;
+    }
+
+    .thrift4business-wallet {
+        width: 255px;
+    }
+
+    .thrift4business-person {
+        top: auto;
+        bottom: 0;
+        height: 390px;
+        object-fit: contain;
+        object-position: bottom;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    .thrift4business-woman {
+        left: 28px;
+        width: 362px;
+        max-width: none;
+        height: 390px;
+    }
+
+    .thrift4business-man {
+        left: 248px;
+        width: 362px;
+        max-width: none;
+        height: 390px;
     }
 }
 
@@ -1651,6 +2144,104 @@ main {
         height: 60px;
     }
 
+    /* Registration Promo Section - Mobile */
+    .registration-promo-section {
+        padding: 3rem var(--page-gutter);
+    }
+
+    .registration-promo-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    .registration-promo-media {
+        order: 1;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        padding-top: 36px;
+    }
+
+    .registration-promo-flyer {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 368 / 552;
+    }
+
+    .registration-promo-badge {
+        left: -24px;
+        padding: 12px 24px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .registration-promo-content {
+        order: 2;
+        width: 100%;
+        align-items: flex-start;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .registration-promo-chip {
+        padding: 10px 22px;
+    }
+
+    .registration-promo-chip-text {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .registration-promo-heading {
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+    .registration-promo-price {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .registration-promo-description {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 100%;
+    }
+
+    .registration-promo-list {
+        width: 100%;
+        align-items: flex-start;
+        text-align: left;
+        margin-top: 0.25rem;
+        gap: 0.85rem;
+    }
+
+    .registration-promo-list li {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .registration-promo-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        margin-top: 0.5rem;
+    }
+
+    .registration-promo-btn {
+        width: 100%;
+        max-width: 100%;
+        padding: 14px 40px;
+    }
+
+    .registration-promo-dates {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: left;
+    }
+
     /* Thrift Packages Section - Mobile */
     .thrift-packages-section {
         background-color: rgba(91, 127, 164, 1);
@@ -1676,7 +2267,7 @@ main {
 
     .thrift-cards-wrapper {
         background-color: rgba(91, 127, 164, 1);
-        padding: 0 var(--page-gutter) 1.25rem;
+        padding: 0 var(--page-gutter) 1rem;
         margin-top: 0;
     }
 
@@ -1711,6 +2302,127 @@ main {
 
     .thrift-card-description {
         font-size: 0.9rem;
+    }
+
+    /* Thrift4Business Section - Mobile */
+    .thrift4business-section {
+        background: #576839;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .thrift4business-banner {
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 0;
+        min-height: auto;
+        padding: 2.5rem 1.5rem 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .thrift4business-banner::after {
+        content: none;
+        display: none;
+    }
+
+    /* Floating cards stacked vertically with clean spacing */
+    .thrift4business-left {
+        position: static;
+        width: 100%;
+        min-height: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.75rem;
+        order: 1;
+        padding-bottom: 2rem;
+    }
+
+    .thrift4business-float {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+
+    .thrift4business-earn {
+        width: 200px;
+        align-self: flex-start;
+    }
+
+    .thrift4business-wallet {
+        width: 260px;
+        align-self: flex-end;
+        margin-right: 0.5rem;
+    }
+
+    /* People pinned to bottom of the banner — big overlay */
+    .thrift4business-person {
+        position: absolute;
+        z-index: 5;
+        height: auto;
+        max-width: none;
+    }
+
+    .thrift4business-woman {
+        bottom: 0;
+        left: -20%;
+        width: 110%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+        object-position: bottom left;
+        z-index: 5;
+    }
+
+    .thrift4business-man {
+        bottom: 0;
+        right: -18%;
+        left: auto;
+        width: 105%;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        object-fit: contain;
+        object-position: bottom right;
+        z-index: 6;
+    }
+
+    /* Text content centered, spaced cleanly, people sit closer below */
+    .thrift4business-right {
+        width: 100%;
+        padding: 0.25rem 0 0;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+        order: 2;
+        padding-bottom: 320px;
+        z-index: 1;
+    }
+
+    .thrift4business-heading {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .thrift4business-description {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .thrift4business-logo img {
+        height: 48px;
+    }
+
+    .thrift4business-btn {
+        padding: 12px 32px;
+        font-size: 15px;
+        margin-top: 0.25rem;
     }
 
     /* Testimonials Section - Mobile */

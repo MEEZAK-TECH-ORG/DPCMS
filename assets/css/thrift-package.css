@@ -330,50 +330,115 @@
 }
 
 /* Thrift4Business: flyer left, features right */
+.thrift-page--thrift4business .thrift-hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+
+.thrift-page--thrift4business .thrift-hero-metric {
+    flex: none;
+    width: auto;
+    max-width: none;
+    height: fit-content;
+    align-self: flex-start;
+    text-align: center;
+}
+
+.thrift-page--thrift4business .thrift-hero-inner .thrift-hero-value {
+    margin-bottom: 0.3rem;
+    white-space: nowrap;
+    font-size: 40px;
+    line-height: 1.1;
+}
+
+.thrift-page--thrift4business .thrift-hero-inner .thrift-hero-label {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
 .thrift-page--thrift4business .thrift4business-how-layout {
     display: flex;
-    gap: 32px;
+    flex-direction: column;
+    gap: 28px;
     align-items: stretch;
 }
 
 .thrift-page--thrift4business .thrift4business-how-flyer {
-    flex: 0 0 42%;
-    max-width: 42%;
+    flex: 0 0 auto;
+    width: min(380px, 100%);
+    max-width: 380px;
+    height: fit-content;
+    margin: 0 auto;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 24px rgba(5, 24, 43, 0.12);
-    display: flex;
+    display: block;
     background: #ffffff;
-    
 }
 
 .thrift-page--thrift4business .thrift4business-how-flyer img {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
     object-fit: contain;
 }
 
+.thrift-page--thrift4business .thrift-how-it-works .how-it-works-subtitle {
+    margin-bottom: 2rem;
+}
+
 .thrift-page--thrift4business .thrift-how-it-works .thrift-features {
-    flex: 1;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: block;
+    width: 100%;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.thrift-page--thrift4business .thrift-how-it-works .thrift-feature {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 20px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
+.thrift-page--thrift4business .thrift-how-it-works .thrift-feature:last-child {
+    margin-bottom: 0;
 }
 
 @media (max-width: 1024px) {
-    .thrift-page--thrift4business .thrift4business-how-layout {
-        flex-direction: column;
-    }
-
     .thrift-page--thrift4business .thrift4business-how-flyer {
-        max-width: 100%;
-        flex-basis: auto;
-        min-height: 320px;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        min-height: 0;
     }
 }
 
 @media (max-width: 640px) {
     .thrift-page--thrift4business .thrift-how-it-works .thrift-features {
+        column-count: 1;
+    }
+
+    .thrift-page--thrift4business .thrift-how-it-works .thrift-feature {
+        margin-bottom: 16px;
+    }
+
+    .thrift-page--thrift4business .thrift-hero-metrics {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .thrift-page--thrift4business .thrift-hero-metric {
+        max-width: none;
+        width: 100%;
     }
 }
 
@@ -425,11 +490,32 @@
 }
 
 .thrift-feature p {
-    margin: 0;
+    margin: 0 0 0.75rem;
     color: #4B5565;
     line-height: 25px;
     font-size: 16px;
     font-weight: 400;
+}
+
+.thrift-feature p:last-child {
+    margin-bottom: 0;
+}
+
+.thrift-feature ul {
+    margin: 0 0 0.75rem;
+    padding-left: 1.25rem;
+    color: #4B5565;
+    line-height: 25px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.thrift-feature li {
+    margin-bottom: 0.35rem;
+}
+
+.thrift-feature li:last-child {
+    margin-bottom: 0;
 }
 
 .thrift-page .thrift-feature:hover {
@@ -438,13 +524,58 @@
 }
 
 .thrift-page .thrift-feature:hover h3,
-.thrift-page .thrift-feature:hover p {
+.thrift-page .thrift-feature:hover p,
+.thrift-page .thrift-feature:hover ul,
+.thrift-page .thrift-feature:hover li,
+.thrift-page .thrift-feature:hover strong {
     color: #ffffff;
 }
 
 .thrift-page .thrift-feature:hover .thrift-feature-number {
     background: #ffffff;
     color: var(--thrift-accent, #e67c3d);
+}
+
+.thrift-operator {
+    background: #ffffff;
+    border: 1px solid #CFE0F3;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+}
+
+.thrift-operator h2 {
+    margin-bottom: 1.25rem;
+}
+
+.thrift-operator-content {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.thrift-operator-content p {
+    margin: 0 0 1rem;
+    color: #4B5565;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.thrift-operator-content p:last-child {
+    margin-bottom: 0;
+}
+
+.thrift-operator-content strong {
+    color: #51250E;
+    font-weight: 700;
+}
+
+.thrift-hero-inner p + p {
+    margin-top: 0.85rem;
+}
+
+.thrift-hero-inner strong {
+    font-weight: 700;
 }
 
 .thrift-savings-tips {
@@ -583,6 +714,9 @@
     margin: 0 auto;
     padding: 14px 40px;
     border-radius: 50px;
+    width: auto;
+    min-width: 180px;
+    white-space: nowrap;
 }
 
 @media (max-width: 1024px) {
